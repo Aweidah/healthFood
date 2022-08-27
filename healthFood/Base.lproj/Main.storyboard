@@ -1,24 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nFR-1y-HYm">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Healthy Food-->
+        <scene sceneID="5SR-Je-v7t">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController storyboardIdentifier="MainVC" id="nFR-1y-HYm" customClass="MainVC" customModule="healthFoodHTU" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vFL-bd-Y8Q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="3hl-bc-hnB">
+                                <rect key="frame" x="85" y="726" width="244" height="96"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyi-ls-ADP">
+                                        <rect key="frame" x="0.0" y="0.0" width="244" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="31" id="wHE-KI-d9F"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="LogIn">
+                                            <color key="baseForegroundColor" name="IMG_lbl"/>
+                                            <color key="baseBackgroundColor" name="IMG_btn"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="LogInPressed:" destination="nFR-1y-HYm" eventType="touchUpInside" id="8wB-yS-gCy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efL-0j-KIK">
+                                        <rect key="frame" x="0.0" y="65" width="244" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="31" id="7mK-76-MEd"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="LogOn">
+                                            <color key="baseForegroundColor" name="IMG_lbl"/>
+                                            <color key="baseBackgroundColor" name="IMG_btn"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="LogOnPressed:" destination="nFR-1y-HYm" eventType="touchUpInside" id="Lip-3G-pXn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwb-2N-UQZ">
+                                <rect key="frame" x="142" y="429" width="130" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xrB-iW-lEh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xrB-iW-lEh" firstAttribute="bottom" secondItem="3hl-bc-hnB" secondAttribute="bottom" constant="40" id="Kib-WR-4id"/>
+                            <constraint firstItem="3hl-bc-hnB" firstAttribute="top" secondItem="vFL-bd-Y8Q" secondAttribute="top" constant="726" id="ZUg-lv-oi3"/>
+                            <constraint firstItem="xrB-iW-lEh" firstAttribute="trailing" secondItem="3hl-bc-hnB" secondAttribute="trailing" constant="85" id="bcq-yQ-tJY"/>
+                            <constraint firstItem="3hl-bc-hnB" firstAttribute="leading" secondItem="xrB-iW-lEh" secondAttribute="leading" constant="85" id="enf-8D-Mj3"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Healthy Food" id="qcS-lD-PIr">
+                        <barButtonItem key="backBarButtonItem" title="." id="yfU-Ya-5Ai"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="rcLable" destination="jwb-2N-UQZ" id="11u-h8-I6s"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="63e-JP-61f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-200.00000000000003" y="49.553571428571423"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="IMG_btn"/>
+    <resources>
+        <namedColor name="IMG_btn">
+            <color red="0.36399999260902405" green="0.23399999737739563" blue="0.4050000011920929" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="IMG_lbl">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -1,25 +1,19 @@
 //
 //  AppDelegate.swift
-//  healthFood
+//  healthyKFood
 //
-//  Created by khaled Aweidah on 7/21/22.
+//  Created by khaled Aweidah on 8/23/22.
 //
 
 import UIKit
-import Firebase
-import FirebaseCore
-
-
-var remoteConfig = RemoteConfig.remoteConfig()
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        FirebaseApp.configure()
-        
         return true
     }
 

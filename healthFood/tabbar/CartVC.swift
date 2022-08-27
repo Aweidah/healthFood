@@ -1,13 +1,13 @@
 //
-//  ViewController.swift
+//  CartVC.swift
 //  healthFood
 //
-//  Created by khaled Aweidah on 7/21/22.
+//  Created by khaled Aweidah on 8/24/22.
 //
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class CartVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     var myArray = [String]()
     
@@ -68,7 +68,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return UISwipeActionsConfiguration(actions: [add])
     }
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
