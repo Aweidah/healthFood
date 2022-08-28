@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import Lottie
 
 class MainVC: UIViewController {
-
+    
+    let animationView = AnimationView()
+    @IBOutlet weak var lottieView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,13 +21,7 @@ class MainVC: UIViewController {
         displayNewValues()
         fetchRemoteConfig()
     }
-    @IBAction func LogInPressed(_ sender: Any) {
-        
-        let loginNav = UIStoryboard(name: "LoginSB", bundle: nil).instantiateViewController(withIdentifier: "LoginNav") as! UINavigationController
-        
-        loginNav.modalPresentationStyle = .fullScreen
-        self.present(loginNav, animated: true)
-        
+    
 //        let storyboard = UIStoryboard(name: "LoginSB", bundle: nil)
 //
 //        let LogInVC = storyboard.instantiateViewController(identifier: Constants.Storyboard.LogInVC) as! LogInVC
@@ -38,7 +36,13 @@ class MainVC: UIViewController {
 //        self.navigationController?.pushViewController(ForgotPasswordVC, animated: true)
 //        self.view.window?.rootViewController = LogInVC
 //        self.view.window?.makeKeyAndVisible()
-
+    
+    @IBAction func LogInPressed(_ sender: Any) {
+                
+        let loginNav = UIStoryboard(name: "LoginSB", bundle: nil).instantiateViewController(withIdentifier: "LoginNav") as! UINavigationController
+        
+        loginNav.modalPresentationStyle = .fullScreen
+        self.present(loginNav, animated: true)
     }
     
     @IBAction func LogOnPressed(_ sender: Any) {
@@ -68,5 +72,20 @@ class MainVC: UIViewController {
     func displayNewValues(){
     let newLabelText = remoteConfig.configValue(forKey: "label_text").stringValue ?? ""
         rcLable.text = newLabelText
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupAnimation()
+    }
+    
+    private func setupAnimation() {
+        animationView.animation = Animation.named("84089-map-markers")
+        animationView.frame = lottieView.bounds
+        animationView.animationSpeed = 2.0
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.play()
+        lottieView.addSubview(animationView)
     }
 }

@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,6 +17,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwb-2N-UQZ">
+                                <rect key="frame" x="176.5" y="94" width="61.5" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="a1x-z8-2vi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" name="IMG_btn"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E1v-Gr-ai9">
+                                <rect key="frame" x="82" y="323" width="250" height="250"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="Jw6-4W-Q5y"/>
+                                    <constraint firstAttribute="width" constant="250" id="Rta-xT-LUz"/>
+                                </constraints>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="3hl-bc-hnB">
                                 <rect key="frame" x="85" y="726" width="244" height="96"/>
                                 <subviews>
@@ -49,27 +67,25 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwb-2N-UQZ">
-                                <rect key="frame" x="142" y="429" width="130" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xrB-iW-lEh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="E1v-Gr-ai9" firstAttribute="centerX" secondItem="vFL-bd-Y8Q" secondAttribute="centerX" id="2u0-2y-tKE"/>
+                            <constraint firstItem="jwb-2N-UQZ" firstAttribute="centerX" secondItem="vFL-bd-Y8Q" secondAttribute="centerX" id="3ja-98-jtK"/>
+                            <constraint firstItem="jwb-2N-UQZ" firstAttribute="top" secondItem="xrB-iW-lEh" secondAttribute="top" constant="50" id="Dbc-D5-rml"/>
                             <constraint firstItem="xrB-iW-lEh" firstAttribute="bottom" secondItem="3hl-bc-hnB" secondAttribute="bottom" constant="40" id="Kib-WR-4id"/>
                             <constraint firstItem="3hl-bc-hnB" firstAttribute="top" secondItem="vFL-bd-Y8Q" secondAttribute="top" constant="726" id="ZUg-lv-oi3"/>
                             <constraint firstItem="xrB-iW-lEh" firstAttribute="trailing" secondItem="3hl-bc-hnB" secondAttribute="trailing" constant="85" id="bcq-yQ-tJY"/>
                             <constraint firstItem="3hl-bc-hnB" firstAttribute="leading" secondItem="xrB-iW-lEh" secondAttribute="leading" constant="85" id="enf-8D-Mj3"/>
+                            <constraint firstItem="E1v-Gr-ai9" firstAttribute="centerY" secondItem="vFL-bd-Y8Q" secondAttribute="centerY" id="eyn-2u-tb5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Healthy Food" id="qcS-lD-PIr">
                         <barButtonItem key="backBarButtonItem" title="." id="yfU-Ya-5Ai"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="lottieView" destination="E1v-Gr-ai9" id="hrf-XV-z8U"/>
                         <outlet property="rcLable" destination="jwb-2N-UQZ" id="11u-h8-I6s"/>
                     </connections>
                 </viewController>
