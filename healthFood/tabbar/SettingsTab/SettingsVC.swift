@@ -29,25 +29,35 @@ class SettingsVC: UIViewController {
 //        } else {
 //            self.lblSelectedLanguage.text = "English"
 //        }
-        
-        // To put title for storyboard
-        title = "Settings"
-        //self.navigationItem.title = "Settings"
 
         let db = Firestore.firestore()
         
         db.collection("users").whereField("email", isEqualTo: Auth.auth().currentUser?.email ?? "")
-            .getDocuments() { (querySnapshot, err) in
+            .getDocuments() {[weak self] (querySnapshot, err) in
        if let err = err {
            print("Error getting documents: \(err)")
        } else {
            for document in querySnapshot!.documents {
                print("\(document.documentID) => \(document.data())")
-               self.lblFullname.text = "\(document.get("firstname") as? String ?? "")  \(document.get("lastname") as? String ?? "")"
+//               print("\(document.get("firstname"))")
+               self!.lblFullname.text = "\(document.get("firstname") as? String ?? "")  \(document.get("lastname") as? String ?? "")"
+//               self?.lblFullname.
            }
         }
        }
     }
+    
+//    ref.collection("perfumes").getDocuments() {[weak self] (querySnapshot, err) in
+//                if let err = err {
+//                    print("Error getting documents: \(err)")
+//                } else {
+//                    for document in querySnapshot!.documents {
+//                        let nam = document.data()["name"] as? String
+//                        let img = document.data()["image"] as? String
+//                        let prc = document.data()["price"] as? Double
+//                        let gender = document.data()["Gender"] as? String
+//                        let doc = PerfumeData(pName: nam ?? "", pImg: img ?? "" , pPrice: prc ?? 0 , pGender: gender ?? "")
+//                        self?.perfumeList.append(doc)
     
     @IBAction func notificationsAction(_ sender: Any) {
     }
@@ -79,18 +89,26 @@ class SettingsVC: UIViewController {
         
         let SettingsAccVC = storyboard.instantiateViewController(identifier: Constants.Storyboard.SettingsAccVC) as! SettingsAccVC
 
-        self.navigationController?.pushViewController(SettingsAccVC, animated: true)
-//        self.view.window?.rootViewController = SettingsAccVC
-//        self.view.window?.makeKeyAndVisible()
+//        self.navigationController?.pushViewController(SettingsAccVC, animated: true)
+        self.view.window?.rootViewController = SettingsAccVC
+        self.view.window?.makeKeyAndVisible()
     }
     
     @IBAction func ChangePasswordPressed(_ sender: Any) {
-        //SettingsChangeNumVC
-        let storyboard = UIStoryboard(name: "SettingsSB", bundle: nil)
         
-        let SettingsChangeNumVC = storyboard.instantiateViewController(identifier: Constants.Storyboard.SettingsChangeNumVC) as! SettingsChangeNumVC
-
-        self.navigationController?.pushViewController(SettingsChangeNumVC, animated: true)
+//        let storyboard = UIStoryboard(name: "SettingsSB", bundle: nil)
+//
+//        let SettingsChangeNumVC = storyboard.instantiateViewController(identifier: Constants.Storyboard.SettingsChangeNumVC) as! SettingsChangeNumVC
+//
+//        self.navigationController?.pushViewController(SettingsChangeNumVC, animated: true)
+//        self.view.window?.rootViewController = SettingsChangeNumVC
+//        self.view.window?.makeKeyAndVisible()
+        
+        let SettingsChgNav = UIStoryboard(name: "SettingsSB", bundle: nil).instantiateViewController(withIdentifier: "SettingsChgNav") as! UINavigationController
+        
+        SettingsChgNav.modalPresentationStyle = .fullScreen
+        self.present(SettingsChgNav, animated: true)
+        
     }
     
     @IBAction func contactUsPressed(_ sender: Any) {
@@ -150,7 +168,8 @@ class SettingsVC: UIViewController {
     
     @IBAction func logOutPressed(_ sender: Any) {
         try! FirebaseAuth.Auth.auth().signOut()
-        present(.init(nibName: "MenuVC", bundle: nil), animated: true)
+        
+//        present(.init(nibName: "MenuVC", bundle: nil), animated: true)
     }
     
 }

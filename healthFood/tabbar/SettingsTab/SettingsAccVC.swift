@@ -8,11 +8,44 @@
 import UIKit
 
 class SettingsAccVC: UIViewController {
-
+    
+    //FirstName
+    @IBOutlet weak var firstnameField: UITextField!
+    //LastName
+    @IBOutlet weak var lastnameField: UITextField!
+    //Email
+    @IBOutlet weak var emailField: UITextField!
+    //Phone Number
+    @IBOutlet weak var NumberField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func editPressed(_ sender: Any) {
+//        firstnameField.isEnabled = true
+//        lastnameField.isEnabled = true
+//        emailField.isEnabled = true
+//        NumberField.isEnabled = true
+        
+        if isEditing != true {
+            firstnameField.alpha = 1
+            lastnameField.alpha = 1
+            emailField.alpha = 1
+            NumberField.alpha = 1
+        }
+        else {
+            firstnameField.alpha = 0
+            lastnameField.alpha = 0
+            emailField.alpha = 0
+            NumberField.alpha = 0
+        }
+    }
+    
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,8 +58,13 @@ class SettingsAccVC: UIViewController {
             navigationController?.setNavigationBarHidden(false, animated: animated)
        }
     
-    @IBAction func back(_ sender: Any) {
-        self.dismiss(animated: true)
+    @IBAction func deleteAccPressed(_ sender: Any) {
+        
     }
+    
+    @IBAction func savePressed(_ sender: Any) {
+        
+    }
+    
     
 }

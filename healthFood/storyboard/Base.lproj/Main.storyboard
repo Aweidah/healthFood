@@ -9,6 +9,47 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Launch MainVC-->
+        <scene sceneID="SKv-FM-7Mb">
+            <objects>
+                <viewController id="Dnc-mw-fKj" customClass="LaunchMainVC" customModule="healthFoodHTU" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s8R-SK-fls">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgs-EM-Ycg">
+                                <rect key="frame" x="57" y="298" width="300" height="300"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="NHR-cB-HCL"/>
+                                    <constraint firstAttribute="width" constant="300" id="dpn-0g-uG2"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Healthy Food" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRm-is-Fbs">
+                                <rect key="frame" x="30" y="613" width="354" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <color key="textColor" name="IMG_btn"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Vcd-xj-rjy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lgs-EM-Ycg" firstAttribute="centerY" secondItem="s8R-SK-fls" secondAttribute="centerY" id="75I-l5-WXS"/>
+                            <constraint firstItem="rRm-is-Fbs" firstAttribute="leading" secondItem="Vcd-xj-rjy" secondAttribute="leading" constant="30" id="aos-Jk-0re"/>
+                            <constraint firstItem="lgs-EM-Ycg" firstAttribute="centerX" secondItem="s8R-SK-fls" secondAttribute="centerX" id="eeT-L7-SHR"/>
+                            <constraint firstAttribute="trailing" secondItem="rRm-is-Fbs" secondAttribute="trailing" constant="30" id="jqM-xO-WER"/>
+                            <constraint firstItem="rRm-is-Fbs" firstAttribute="top" secondItem="lgs-EM-Ycg" secondAttribute="bottom" constant="15" id="m0l-Tp-aXX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lottieViewLchSn" destination="lgs-EM-Ycg" id="L3x-zA-rFg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T4X-Ew-39e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1139" y="50"/>
+        </scene>
         <!--Healthy Food-->
         <scene sceneID="5SR-Je-v7t">
             <objects>
@@ -18,7 +59,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwb-2N-UQZ">
-                                <rect key="frame" x="176.5" y="94" width="61.5" height="31"/>
+                                <rect key="frame" x="176.5" y="129" width="61.5" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="a1x-z8-2vi"/>
                                 </constraints>
@@ -27,11 +68,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E1v-Gr-ai9">
-                                <rect key="frame" x="82" y="323" width="250" height="250"/>
+                                <rect key="frame" x="57" y="298" width="300" height="300"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="Jw6-4W-Q5y"/>
-                                    <constraint firstAttribute="width" constant="250" id="Rta-xT-LUz"/>
+                                    <constraint firstAttribute="height" constant="300" id="Jw6-4W-Q5y"/>
+                                    <constraint firstAttribute="width" constant="300" id="Rta-xT-LUz"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="3hl-bc-hnB">
@@ -73,7 +114,7 @@
                         <constraints>
                             <constraint firstItem="E1v-Gr-ai9" firstAttribute="centerX" secondItem="vFL-bd-Y8Q" secondAttribute="centerX" id="2u0-2y-tKE"/>
                             <constraint firstItem="jwb-2N-UQZ" firstAttribute="centerX" secondItem="vFL-bd-Y8Q" secondAttribute="centerX" id="3ja-98-jtK"/>
-                            <constraint firstItem="jwb-2N-UQZ" firstAttribute="top" secondItem="xrB-iW-lEh" secondAttribute="top" constant="50" id="Dbc-D5-rml"/>
+                            <constraint firstItem="jwb-2N-UQZ" firstAttribute="top" secondItem="xrB-iW-lEh" secondAttribute="top" constant="85" id="Dbc-D5-rml"/>
                             <constraint firstItem="xrB-iW-lEh" firstAttribute="bottom" secondItem="3hl-bc-hnB" secondAttribute="bottom" constant="40" id="Kib-WR-4id"/>
                             <constraint firstItem="3hl-bc-hnB" firstAttribute="top" secondItem="vFL-bd-Y8Q" secondAttribute="top" constant="726" id="ZUg-lv-oi3"/>
                             <constraint firstItem="xrB-iW-lEh" firstAttribute="trailing" secondItem="3hl-bc-hnB" secondAttribute="trailing" constant="85" id="bcq-yQ-tJY"/>
