@@ -12,7 +12,7 @@
         <!--Navigation Controller-->
         <scene sceneID="BXc-If-Ab2">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pbq-ii-wRl" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="OffersNav" automaticallyAdjustsScrollViewInsets="NO" id="pbq-ii-wRl" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VNR-5p-4k2">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

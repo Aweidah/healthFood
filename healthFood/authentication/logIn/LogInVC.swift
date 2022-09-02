@@ -32,34 +32,34 @@ class LogInVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        #if DEBUG
+#if DEBUG
         setUpTestingData()
-        #endif
+#endif
         
-//        title = "login"
-//        titleColor = UIColor.red
-
-//        let attributedString = NSAttributedString(string: "Forget your Password?", attributes: [NSForegroundColorAttributeName: UIColor.white , NSUnderlineStyleAttributedName:1])
-//        PasswordBtn.setAttributedTitle(attributedString, for: .normal)
+        //        title = "login"
+        //        titleColor = UIColor.red
+        
+        //        let attributedString = NSAttributedString(string: "Forget your Password?", attributes: [NSForegroundColorAttributeName: UIColor.white , NSUnderlineStyleAttributedName:1])
+        //        PasswordBtn.setAttributedTitle(attributedString, for: .normal)
         
         // Do any additional setup after loading the view.
     }
-        
+    
     private func setUpTestingData() {
-        self.fieldEmail.text = "khaled.aweidah@yahoo.com"
+        self.fieldEmail.text = "test@yahoo.com"
         self.fieldPassword.text = "P@ssw0rd1"
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            navigationController?.setNavigationBarHidden(true, animated: animated)
-        }
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
-            super.viewWillDisappear(animated)
-            navigationController?.setNavigationBarHidden(false, animated: animated)
-       }
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
     
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true)
@@ -82,11 +82,9 @@ class LogInVC: UIViewController {
         
         let ForgotPasswordVC = storyboard.instantiateViewController(identifier: Constants.Storyboard.ForgotPasswordVC) as! ForgotPasswordVC
         
-//        self.view.window?.rootViewController = ForgotPasswordVC
-//        self.view.window?.makeKeyAndVisible()
         self.navigationController?.pushViewController(ForgotPasswordVC, animated: true)
     }
-        
+    
     @IBAction func logInPressed(_ sender: Any) {
         loginUser()
     }
@@ -95,19 +93,12 @@ class LogInVC: UIViewController {
         
         let email = fieldEmail.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = fieldPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-
+        
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-            /*if error != nil{
-             let alert = Constants.createAlertController(title: "Error", message: "There was an error in email field, check your email spilling, or this email does'nt exist.")
-             self.present(alert, animated: true, completion: nil)
-             return
-         }
-         let alert = Constants.createAlertController(title: "Success", message: "A password reset email has been sent to your email.")
-         self.present(alert, animated: true, completion: nil)
-             */
+            
             if error != nil{
-//                let alert = Constants.createAlertController(title: "Error", message: "There's something wrong with the fields, try to fill in the fields correctly.")
-//                self.present(alert, animated: true, completion: nil)
+                let alert = Constants.createAlertController(title: "Error", message: "There was an error in email field, check your email spilling, or this email does'nt exist.")
+                self.present(alert, animated: true, completion: nil)
                 return
             }
             else {

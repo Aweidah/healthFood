@@ -111,7 +111,5 @@ class LogOnVC: UIViewController {
     
     view.window?.rootViewController = TabBarVC
     view.window?.makeKeyAndVisible()
-    
-//        mainScreen?.modalPresentationStyle = .fullScreen
     }
 }

@@ -26,21 +26,6 @@ class MainVC: UIViewController {
         fetchRemoteConfig()
     }
     
-//        let storyboard = UIStoryboard(name: "LoginSB", bundle: nil)
-//
-//        let LogInVC = storyboard.instantiateViewController(identifier: Constants.Storyboard.LogInVC) as! LogInVC
-        
-//        let navController = UINavigationController(rootViewController: LogInVC)
-//        navController.modalPresentationStyle = .fullScreen
-//        self.present(navController, animated:true, completion: nil)
-        
-//        LogInVC.modalPresentationStyle = .fullScreen
-//        self.present(LogInVC , animated: true)
-        
-//        self.navigationController?.pushViewController(ForgotPasswordVC, animated: true)
-//        self.view.window?.rootViewController = LogInVC
-//        self.view.window?.makeKeyAndVisible()
-    
     @IBAction func LogInPressed(_ sender: Any) {
                 
         let loginNav = UIStoryboard(name: "LoginSB", bundle: nil).instantiateViewController(withIdentifier: "LoginNav") as! UINavigationController

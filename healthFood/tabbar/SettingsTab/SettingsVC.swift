@@ -24,91 +24,60 @@ class SettingsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if (isArabic()) {
-//            self.lblSelectedLanguage.text = "العربية"
-//        } else {
-//            self.lblSelectedLanguage.text = "English"
-//        }
-
+        //        if (isArabic()) {
+        //            self.lblSelectedLanguage.text = "العربية"
+        //        } else {
+        //            self.lblSelectedLanguage.text = "English"
+        //        }
+        
         let db = Firestore.firestore()
         
         db.collection("users").whereField("email", isEqualTo: Auth.auth().currentUser?.email ?? "")
             .getDocuments() {[weak self] (querySnapshot, err) in
-       if let err = err {
-           print("Error getting documents: \(err)")
-       } else {
-           for document in querySnapshot!.documents {
-               print("\(document.documentID) => \(document.data())")
-//               print("\(document.get("firstname"))")
-               self!.lblFullname.text = "\(document.get("firstname") as? String ?? "")  \(document.get("lastname") as? String ?? "")"
-//               self?.lblFullname.
-           }
-        }
-       }
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        print("\(document.documentID) => \(document.data())")
+                        //               print("\(document.get("firstname"))")
+                        self!.lblFullname.text = "\(document.get("firstname") as? String ?? "")  \(document.get("lastname") as? String ?? "")"
+                        //               self?.lblFullname.
+                    }
+                }
+            }
     }
     
-//    ref.collection("perfumes").getDocuments() {[weak self] (querySnapshot, err) in
-//                if let err = err {
-//                    print("Error getting documents: \(err)")
-//                } else {
-//                    for document in querySnapshot!.documents {
-//                        let nam = document.data()["name"] as? String
-//                        let img = document.data()["image"] as? String
-//                        let prc = document.data()["price"] as? Double
-//                        let gender = document.data()["Gender"] as? String
-//                        let doc = PerfumeData(pName: nam ?? "", pImg: img ?? "" , pPrice: prc ?? 0 , pGender: gender ?? "")
-//                        self?.perfumeList.append(doc)
+    //    ref.collection("perfumes").getDocuments() {[weak self] (querySnapshot, err) in
+    //                if let err = err {
+    //                    print("Error getting documents: \(err)")
+    //                } else {
+    //                    for document in querySnapshot!.documents {
+    //                        let nam = document.data()["name"] as? String
+    //                        let img = document.data()["image"] as? String
+    //                        let prc = document.data()["price"] as? Double
+    //                        let gender = document.data()["Gender"] as? String
+    //                        let doc = PerfumeData(pName: nam ?? "", pImg: img ?? "" , pPrice: prc ?? 0 , pGender: gender ?? "")
+    //                        self?.perfumeList.append(doc)
     
     @IBAction func notificationsAction(_ sender: Any) {
     }
     
     @IBAction func CartPressed(_ sender: Any) {
         
-//        let SettingsNav = UIStoryboard(name: "SettingsSB", bundle: nil).instantiateViewController(withIdentifier: "SettingsNav") as! UINavigationController
-//
-//        SettingsNav.modalPresentationStyle = .fullScreen
-//        self.present(SettingsNav, animated: true)
-        
-        let storyboard = UIStoryboard(name: "SettingsSB", bundle: nil)
-
-        let CartVC = storyboard.instantiateViewController(identifier: Constants.Storyboard.CartVC) as! CartVC
-
-//      self.navigationController?.pushViewController(CartVC, animated: true)
-        self.view.window?.rootViewController = CartVC
-        self.view.window?.makeKeyAndVisible()
+        let cartVC = UIStoryboard(name: "SettingsSB", bundle: nil).instantiateViewController(withIdentifier: "CartVC")
+        self.navigationController?.pushViewController(cartVC, animated: true)
     }
     
     @IBAction func accountPressed(_ sender: Any) {
         
-//        let SettingsNav = UIStoryboard(name: "SettingsSB", bundle: nil).instantiateViewController(withIdentifier: "SettingsNav") as! UINavigationController
-//
-//        SettingsNav.modalPresentationStyle = .fullScreen
-//        self.present(SettingsNav, animated: true)
-        
-        let storyboard = UIStoryboard(name: "SettingsSB", bundle: nil)
-        
-        let SettingsAccVC = storyboard.instantiateViewController(identifier: Constants.Storyboard.SettingsAccVC) as! SettingsAccVC
-
-//        self.navigationController?.pushViewController(SettingsAccVC, animated: true)
-        self.view.window?.rootViewController = SettingsAccVC
-        self.view.window?.makeKeyAndVisible()
+        let settingsAccVC = UIStoryboard(name: "SettingsSB", bundle: nil).instantiateViewController(withIdentifier: "SettingsAccVC")
+        self.navigationController?.pushViewController(settingsAccVC, animated: true)
     }
     
     @IBAction func ChangePasswordPressed(_ sender: Any) {
         
-//        let storyboard = UIStoryboard(name: "SettingsSB", bundle: nil)
-//
-//        let SettingsChangeNumVC = storyboard.instantiateViewController(identifier: Constants.Storyboard.SettingsChangeNumVC) as! SettingsChangeNumVC
-//
-//        self.navigationController?.pushViewController(SettingsChangeNumVC, animated: true)
-//        self.view.window?.rootViewController = SettingsChangeNumVC
-//        self.view.window?.makeKeyAndVisible()
-        
-        let SettingsChgNav = UIStoryboard(name: "SettingsSB", bundle: nil).instantiateViewController(withIdentifier: "SettingsChgNav") as! UINavigationController
-        
-        SettingsChgNav.modalPresentationStyle = .fullScreen
-        self.present(SettingsChgNav, animated: true)
-        
+        let settingsChangeNumVC = UIStoryboard(name: "SettingsSB", bundle: nil).instantiateViewController(withIdentifier: "SettingsChangeNumVC")
+        self.navigationController?.pushViewController(settingsChangeNumVC, animated: true)
     }
     
     @IBAction func contactUsPressed(_ sender: Any) {
@@ -142,20 +111,20 @@ class SettingsVC: UIViewController {
                 switch (value) {
                 case 1:
                     //arabic
-//                    if (MOLHLanguage.currentAppleLanguage() == "en") {
-//                        MOLH.setLanguageTo("ar")
-//                        MOLHLanguage.setAppleLAnguageTo("ar")
-//                        MOLH.reset()
-//
-//                    }
+                    //                    if (MOLHLanguage.currentAppleLanguage() == "en") {
+                    //                        MOLH.setLanguageTo("ar")
+                    //                        MOLHLanguage.setAppleLAnguageTo("ar")
+                    //                        MOLH.reset()
+                    //
+                    //                    }
                     break
                 case 2:
                     //english
-//                    if (MOLHLanguage.currentAppleLanguage() == "ar") {
-//                        MOLH.setLanguageTo("en")
-//                        MOLHLanguage.setAppleLAnguageTo("en")
-//                        MOLH.reset()
-//                    }
+                    //                    if (MOLHLanguage.currentAppleLanguage() == "ar") {
+                    //                        MOLH.setLanguageTo("en")
+                    //                        MOLHLanguage.setAppleLAnguageTo("en")
+                    //                        MOLH.reset()
+                    //                    }
                     break
                 default:
                     print("1")
@@ -168,8 +137,9 @@ class SettingsVC: UIViewController {
     
     @IBAction func logOutPressed(_ sender: Any) {
         try! FirebaseAuth.Auth.auth().signOut()
-        
-//        present(.init(nibName: "MenuVC", bundle: nil), animated: true)
+//        let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainVC")
+//        self.navigationController?.pushViewController(mainVC, animated: true)
+                present(.init(nibName: "MenuVC", bundle: nil), animated: true)
     }
     
 }

@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseFirestore
 
 class SettingsAccVC: UIViewController {
     
@@ -17,6 +20,8 @@ class SettingsAccVC: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     //Phone Number
     @IBOutlet weak var NumberField: UITextField!
+    
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +35,25 @@ class SettingsAccVC: UIViewController {
 //        emailField.isEnabled = true
 //        NumberField.isEnabled = true
         
+//        tableView.isEditing = !tableView.isEditing
+//                if tableView.isEditing == true{
+////                    editButtonItem.setTitle("Done", for: .normal)
+//                    editPressed("Done")
+//                    firstnameField.alpha = 1
+//                    lastnameField.alpha = 1
+//                    emailField.alpha = 1
+//                    NumberField.alpha = 1
+//                }
+//                else
+//                {
+//                    editPressed("Edit")
+////                    editPressed.setTitle("Edit", for: .normal)
+//                    firstnameField.alpha = 0
+//                    lastnameField.alpha = 0
+//                    emailField.alpha = 0
+//                    NumberField.alpha = 0
+//                }
+
         if isEditing != true {
             firstnameField.alpha = 1
             lastnameField.alpha = 1
@@ -48,18 +72,53 @@ class SettingsAccVC: UIViewController {
         self.dismiss(animated: true)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            navigationController?.setNavigationBarHidden(true, animated: animated)
-        }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-            super.viewWillDisappear(animated)
-            navigationController?.setNavigationBarHidden(false, animated: animated)
-       }
-    
     @IBAction func deleteAccPressed(_ sender: Any) {
+
+        let user = Auth.auth().currentUser
+
+        user?.delete { error in
+          if let error = error {
+            // An error happened.
+          } else {
+            // Account deleted.
+              try!  Auth.auth().signOut()
+//              let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//
+//              let MainVC = storyboard.instantiateViewController(identifier: Constants.Storyboard.MainVC) as! MainVC
+//
+//      //      self.navigationController?.pushViewController(CartVC, animated: true)
+//              self.view.window?.rootViewController = MainVC
+//              self.view.window?.makeKeyAndVisible()
+//              self.navigationController?.popToRootViewController(animated: true)
+          }
+        }
         
+//    let credential: AuthCredential
+//
+//        users.reauthenticate(with:credential) { error in
+//            if let error = error {
+//                // An error happened.
+//                showAlertWithErrorMessage(message: error.localizedDescription)
+//            } else {
+//                // User re-authenticated.
+//                users.delete { error in
+//                    if let error = error {
+//                        // An error happened.
+//                        showAlertWithErrorMessage(message: error.localizedDescription)
+//                    } else {
+//                        // Account deleted.
+//                        Database.database().reference(fromURL: kFirebaseLink).child(kUser).child(userID).removeValue()
+//
+//                        try!  Auth.auth().signOut()
+//                        self.navigationController?.popToRootViewController(animated: true)
+//                    }
+//                }
+//
+//                }
+//            }
+//        else{
+//            showAlertWithErrorMessage(message: "Try again later")
+//        }
     }
     
     @IBAction func savePressed(_ sender: Any) {
