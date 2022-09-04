@@ -9,7 +9,7 @@ import UIKit
 import Lottie
 
 class LaunchMainVC: UIViewController {
-
+    
     let animationView = AnimationView()
     //Animation LaunchScreen
     @IBOutlet weak var lottieViewLchSn: UIView!
@@ -25,20 +25,20 @@ class LaunchMainVC: UIViewController {
             self?.present(LaunchMainVC, animated: true)
         }
     }
-        override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            setupAnimation()
-
-        }
-            
-        private func setupAnimation() {
-            animationView.animation = Animation.named("coconut")
-            animationView.frame = lottieViewLchSn.bounds
-            animationView.animationSpeed = 2.3
-            animationView.contentMode = .scaleAspectFit
-            animationView.loopMode = .loop
-            animationView.play()
-            lottieViewLchSn.addSubview(animationView)
-        }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupAnimation()
+        
+    }
+    
+    private func setupAnimation() {
+        animationView.animation = Animation.named("coconut")
+        animationView.frame = lottieViewLchSn.bounds
+        animationView.animationSpeed = 2.3
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.play()
+        lottieViewLchSn.addSubview(animationView)
+    }
+    
 }

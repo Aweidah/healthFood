@@ -18,7 +18,7 @@ class AppButton : UIButton {
             return layer.borderWidth
         }
     }
-
+    
     @IBInspectable var cornerRadius: CGFloat {
         set {
             layer.cornerRadius = newValue
@@ -27,7 +27,7 @@ class AppButton : UIButton {
             return layer.cornerRadius
         }
     }
-
+    
     @IBInspectable var borderColor: UIColor? {
         set {
             guard let uiColor = newValue else { return }

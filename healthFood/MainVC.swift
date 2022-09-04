@@ -27,7 +27,7 @@ class MainVC: UIViewController {
     }
     
     @IBAction func LogInPressed(_ sender: Any) {
-                
+        
         let loginNav = UIStoryboard(name: "LoginSB", bundle: nil).instantiateViewController(withIdentifier: "LoginNav") as! UINavigationController
         
         loginNav.modalPresentationStyle = .fullScreen
@@ -46,23 +46,23 @@ class MainVC: UIViewController {
     
     
     
-//  setupRemoteConfigDefaults
+    //  setupRemoteConfigDefaults
     
     func setupRemoteConfigDefaults() {
-    let defaultValue = ["label_text": "Hello world!" as NSObject]
-    remoteConfig.setDefaults(defaultValue)
+        let defaultValue = ["label_text": "Hello world!" as NSObject]
+        remoteConfig.setDefaults(defaultValue)
     }
     
     func fetchRemoteConfig(){
-    remoteConfig.fetch(withExpirationDuration: 0) { [unowned self] (status, error) in
-    guard error == nil else { return }
-    print("Got the value from Remote Config!")
-    remoteConfig.activate()
-    self.displayNewValues()
-    }}
+        remoteConfig.fetch(withExpirationDuration: 0) { [unowned self] (status, error) in
+            guard error == nil else { return }
+            print("Got the value from Remote Config!")
+            remoteConfig.activate()
+            self.displayNewValues()
+        }}
     
     func displayNewValues(){
-    let newLabelText = remoteConfig.configValue(forKey: "label_text").stringValue ?? ""
+        let newLabelText = remoteConfig.configValue(forKey: "label_text").stringValue ?? ""
         rcLable.text = newLabelText
     }
     
@@ -70,9 +70,9 @@ class MainVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupAnimation()
-
-    }
         
+    }
+    
     private func setupAnimation() {
         animationView.animation = Animation.named("food-vlogger")
         animationView.frame = lottieView.bounds

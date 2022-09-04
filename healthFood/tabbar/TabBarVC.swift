@@ -9,9 +9,9 @@ import UIKit
 
 class TabBarVC: UITabBarController {
     
-        var OffersNav: UINavigationController!
-        var MenuNav: UINavigationController!
-        var SettingsNav: UINavigationController!
+    var OffersNav: UINavigationController!
+    var MenuNav: UINavigationController!
+    var SettingsNav: UINavigationController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class TabBarVC: UITabBarController {
         OffersNav.tabBarItem = OffersItem
         MenuNav.tabBarItem = MenuItem
         SettingsNav.tabBarItem = settingsItem
-
+        
         setViewControllers([OffersNav, MenuNav, SettingsNav], animated: false)
     }
     

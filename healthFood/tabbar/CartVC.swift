@@ -9,6 +9,7 @@ import UIKit
 
 class CartVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
+    
     var myArray = [String]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,16 +71,28 @@ class CartVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     }
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var AddTextField: UITextField!
+    @IBOutlet weak var ImgFood: UIImageView!
+    var photo = UIImage()
+    @IBOutlet weak var LblName: UILabel!
+    var name = ""
+    @IBOutlet weak var LblPrice: UILabel!
+    var price = ""
+    @IBOutlet weak var LblType: UILabel!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //        ImgFood.image = photo
+        //        LblName.text = name
+        //        LblPrice.text = "\(price)"
         tableView.delegate = self
         tableView.dataSource = self
         
     }
     
-    @IBOutlet weak var AddTextField: UITextField!
     @IBAction func EditTable(_ sender: Any) {
         tableView.isEditing = !tableView.isEditing
     }
@@ -95,5 +108,8 @@ class CartVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
             tableView.insertRows(at: [IndexPath], with: .automatic)
             tableView.endUpdates()
         }
+    }
+    
+    @IBAction func Cart(_ sender: Any) {
     }
 }

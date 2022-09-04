@@ -15,33 +15,27 @@ class OffersVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     
     
     let db = Firestore.firestore()
-    
-    var scopeButtonPressed = false
-    var searching = false
+    let searchBar = UISearchController(searchResultsController: nil)
     
     //old line code only menuFoodArray
     var menuFoodArray = [menuFood]() //searchedperfume
     var FoodArray = [menuFood]() //perfumeList
-    //    var filterdData: [String]!
-    let searchBar = UISearchController(searchResultsController: nil)
-        
+    
+    var scopeButtonPressed = false
+    var searching = false
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         if searching || scopeButtonPressed {
             return menuFoodArray.count
         }else {
             return FoodArray.count
         }
-    }
+    }//done
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Mycell", for: indexPath) as! TableViewCell
-        
-//        let mydata = menuFoodArray[indexPath.row]
-//
-//        cell.fillCall(photo: mydata.photo, name: mydata.name, type: mydata.type, price: mydata.price)
-
-//        return cell
-        
         
         if searching || scopeButtonPressed {
             //cell.imgFood.image = UIImage(named: menuFoodArray[indexPath.row].photo)
@@ -56,30 +50,20 @@ class OffersVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
             cell.LblPrice.text = ("\(FoodArray[indexPath.row].price) JD")
         }
         return cell
-    }
+        
+        //        let mydata = menuFoodArray[indexPath.row]
+        //
+        //        cell.fillCall(photo: mydata.photo, name: mydata.name, type: mydata.type, price: mydata.price)
+        
+        //        return cell
+    }//done
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        menuFoodArray = []
-        
-        var menuFoodArray = [menuFood]()
-        
-        for word in [menuFood]()
-        {
-            if word.name.uppercased().contains(searchText.uppercased())
-            {
-                menuFoodArray.append(word)
-            }
-        }
-        
-        self.tableView.reloadData()
-    }
+    }//done
     
     func updateSearchResults(for searchController: UISearchController) {
+        
         let scopeButton = searchController.searchBar.scopeButtonTitles![searchController.searchBar.selectedScopeButtonIndex]
         
         let searchText = searchController.searchBar.text!
@@ -88,7 +72,7 @@ class OffersVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
             menuFoodArray.removeAll()
             
             for offer in FoodArray {
-                if offer.name.lowercased().contains(searchText.lowercased()) && (offer.type == scopeButton || scopeButton == "All")
+                if offer.name.lowercased().contains(searchText.lowercased()) && (offer.type == scopeButton || scopeButton == "All Rewards")
                 {
                     menuFoodArray.append(offer)
                 }}}
@@ -97,7 +81,7 @@ class OffersVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
                 menuFoodArray.removeAll()
                 let scopeButton = searchController.searchBar.scopeButtonTitles![searchController.searchBar.selectedScopeButtonIndex]
                 for offer in FoodArray {
-                    if (offer.name == scopeButton || scopeButton == "All") {
+                    if (offer.name == scopeButton || scopeButton == "All Rewards") {
                         menuFoodArray.append(offer)
                     }
                 }
@@ -112,13 +96,67 @@ class OffersVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
             
         }
         tableView.reloadData()
+    }//done
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searching = false
+        menuFoodArray.removeAll()
+        tableView.reloadData()
+    }//done
+    
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        
+        //        searchController.searchBar.text = ""
+        //        scopeButtonPressed = true
+        //
+        //        let scopeButton = searchController.searchBar.scopeButtonTitles![searchController.searchBar.selectedScopeButtonIndex]
+        //
+        //        menuFoodArray.removeAll()
+        //
+        //        for offers in FoodArray {
+        //            if (offers.type == scopeButton || scopeButton == "All Rewards"){
+        //                menuFoodArray.append(offers)
+        //            }
+        //        }
+        //        tableView.reloadData()
+    }
+    //    var menuFoodArray = [menuFood]() //searchedperfume
+    //    var FoodArray = [menuFood]() //perfumeList
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let cartVC = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.CartVC) as? CartVC
+        
+        //        if searching || scopeButtonPressed {
+        //            CartVC?.photo = UIImage(named: "\(menuFoodArray[indexPath.row].photo)")!
+        //            CartVC?.name = (menuFoodArray[indexPath.row].name)
+        //            CartVC?.price = ("\(menuFoodArray[indexPath.row].price) Jd")
+        //            self.present((cartVC)!, animated: true, completion: nil)
+        //        }
+        //        else {
+        //            CartVC?.photo = UIImage(named: FoodArray[indexPath.row].photo)!
+        //            CartVC?.name = (FoodArray[indexPath.row].name)
+        //            CartVC?.price = ("\(FoodArray[indexPath.row].price) JD")
+        //            self.present((cartVC)!, animated: true, completion: nil)
+        //        }
     }
     
-    //    func writedata(text: String){
-    //
-    //        let docRef = database.document("")
-    //        docRef.setData(["text": text])
-    //    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        //        menuFoodArray = []
+        //
+        //        var menuFoodArray = [menuFood]()
+        //
+        //        for word in [menuFood]()
+        //        {
+        //            if word.name.uppercased().contains(searchText.uppercased())
+        //            {
+        //                menuFoodArray.append(word)
+        //            }
+        //        }
+        //
+        //        self.tableView.reloadData()
+    }
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -143,17 +181,17 @@ class OffersVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         //        filterdData = menuFoodArray
         
         
-        let offer1 = (menuFood.init(photo: UIImage(named: "menu.jpg")!, name: "First Deal", type: "", price: 180))
+        let offer1 = (menuFood.init(photo: UIImage(named: "menu.jpg")!, name: "First Deal", type: "Deals", price: 180))
         FoodArray.append(offer1)
-        let offer2 = (menuFood.init(photo: UIImage(named: "menu.jpg")!, name: "Second Deal", type: "", price: 220))
+        let offer2 = (menuFood.init(photo: UIImage(named: "menu.jpg")!, name: "Second Deal", type: "Deals", price: 220))
         FoodArray.append(offer2)
-        let offer3 = (menuFood.init(photo: UIImage(named: "menu.jpg")!, name: "Third Deal", type: "", price: 285))
+        let offer3 = (menuFood.init(photo: UIImage(named: "menu.jpg")!, name: "Third Deal", type: "Deals", price: 285))
         FoodArray.append(offer3)
-        let offer4 = (menuFood.init(photo: UIImage(named: "menu.jpg")!, name: " Deal", type: "", price: 285))
+        let offer4 = (menuFood.init(photo: UIImage(named: "menu.jpg")!, name: " Deal", type: "All Rewards", price: 285))
         FoodArray.append(offer4)
         
         //old code line
-        //        menuFoodArray.append(menuFood.init(photo: UIImage(named: "menu.jpg")!, name: " Deal", price: 285))
+        //        menuFoodArray.append(menuFood.init(photo: UIImage(named: "menu.jpg")!, name: " Deal", type: "", price: 285))
     }
     
     struct menuFood {
@@ -200,7 +238,7 @@ class OffersVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         searchBar.obscuresBackgroundDuringPresentation = false
         searchBar.searchBar.enablesReturnKeyAutomatically = false
         searchBar.searchBar.returnKeyType = UIReturnKeyType.done
-        searchBar.searchBar.scopeButtonTitles = ["All" , "Men" , "Women"]
+        searchBar.searchBar.scopeButtonTitles = ["All Rewards" , "Deals"]
         self.navigationItem.hidesSearchBarWhenScrolling = false
         self.navigationItem.searchController = searchBar
         definesPresentationContext = true
