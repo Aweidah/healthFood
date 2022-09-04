@@ -90,12 +90,12 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
         }
         tableView.reloadData()
     }
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         configureSearchController()
         tableView.delegate = self
         tableView.dataSource = self
@@ -105,16 +105,17 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
         self.navigationItem.title = "Menu"
         navigationItem.searchController = searchBar
         
-        let menu1 = (menuFood.init(photo: UIImage(named: "IMG_1.jpg")!, name: "Salad", type: "", price: 3.3))
+        let menu1 = (menuFood.init(photo: UIImage(named: "IMG_1.jpg")!, name: "Salad", type: "Salad", price: 3.3))
         FoodArray.append(menu1)
-        menuFoodArray.append(menuFood.init(photo: UIImage(named: "IMG_2.jpg")!, name: "Freekeh", type: "", price: 6.0))
+        let menu2 = (menuFood.init(photo: UIImage(named: "IMG_2.jpg")!, name: "Freekeh", type: "Dinner", price: 6.0))
+        FoodArray.append(menu2)
         menuFoodArray.append(menuFood.init(photo: UIImage(named: "IMG_3.jpg")!, name: "Lemon Creamy", type: "", price: 6.0))
         menuFoodArray.append(menuFood.init(photo: UIImage(named: "IMG_1.jpg")!, name: ".", type: "", price: 3.3))
         menuFoodArray.append(menuFood.init(photo: UIImage(named: "IMG_2.jpg")!, name: ".", type: "", price: 3.3))
         menuFoodArray.append(menuFood.init(photo: UIImage(named: "IMG_3.jpg")!, name: ".", type: "", price: 3.3))
         menuFoodArray.append(menuFood.init(photo: UIImage(named: "IMG_2.jpg")!, name: ".", type: "", price: 3.3))
         menuFoodArray.append(menuFood.init(photo: UIImage(named: "IMG_1.jpg")!, name: "okay", type: "", price: 3.3))
-     
+        
     }
     
     struct menuFood {
@@ -132,7 +133,7 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
         searchBar.obscuresBackgroundDuringPresentation = false
         searchBar.searchBar.enablesReturnKeyAutomatically = false
         searchBar.searchBar.returnKeyType = UIReturnKeyType.done
-        searchBar.searchBar.scopeButtonTitles = ["Snack" , "Salad" , "Breakfast", "Dinner"]
+        searchBar.searchBar.scopeButtonTitles = ["All" ,"Snack" , "Salad" , "Breakfast", "Dinner"]
         self.navigationItem.hidesSearchBarWhenScrolling = false
         self.navigationItem.searchController = searchBar
         definesPresentationContext = true
