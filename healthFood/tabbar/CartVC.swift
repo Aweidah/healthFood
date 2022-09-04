@@ -41,15 +41,15 @@ class CartVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
             completionHandler(true)
         }
         /*
-        let add = UIContextualAction(style: .destructive, title: "String?") { myAction, view, completionHandler in
-            
-            self.myArray.remove(at: indexPath.row)
-            tableView.beginUpdates()
-            tableView.deleteRows(at: [indexPath], with: .bottom)
-            tableView.endUpdates()
-            completionHandler(true)
-        
-        }
+         let add = UIContextualAction(style: .destructive, title: "String?") { myAction, view, completionHandler in
+         
+         self.myArray.remove(at: indexPath.row)
+         tableView.beginUpdates()
+         tableView.deleteRows(at: [indexPath], with: .bottom)
+         tableView.endUpdates()
+         completionHandler(true)
+         
+         }
          */
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
@@ -63,7 +63,7 @@ class CartVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
             tableView.deleteRows(at: [indexPath], with: .bottom)
             tableView.endUpdates()
             completionHandler(true)
-        
+            
         }
         
         return UISwipeActionsConfiguration(actions: [add])
@@ -77,7 +77,7 @@ class CartVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         tableView.delegate = self
         tableView.dataSource = self
         
-        }
+    }
     
     @IBOutlet weak var AddTextField: UITextField!
     @IBAction func EditTable(_ sender: Any) {
@@ -89,11 +89,11 @@ class CartVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         if let myText = AddTextField.text{
             myArray.append(myText)
             
-        let IndexPath = IndexPath(row: myArray.count-1, section: 0)
-        
-        tableView.beginUpdates()
-        tableView.insertRows(at: [IndexPath], with: .automatic)
-        tableView.endUpdates()
+            let IndexPath = IndexPath(row: myArray.count-1, section: 0)
+            
+            tableView.beginUpdates()
+            tableView.insertRows(at: [IndexPath], with: .automatic)
+            tableView.endUpdates()
         }
     }
 }

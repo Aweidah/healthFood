@@ -21,39 +21,16 @@ class SettingsAccVC: UIViewController {
     //Phone Number
     @IBOutlet weak var NumberField: UITextField!
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var edit: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
     @IBAction func editPressed(_ sender: Any) {
-//        firstnameField.isEnabled = true
-//        lastnameField.isEnabled = true
-//        emailField.isEnabled = true
-//        NumberField.isEnabled = true
         
-//        tableView.isEditing = !tableView.isEditing
-//                if tableView.isEditing == true{
-////                    editButtonItem.setTitle("Done", for: .normal)
-//                    editPressed("Done")
-//                    firstnameField.alpha = 1
-//                    lastnameField.alpha = 1
-//                    emailField.alpha = 1
-//                    NumberField.alpha = 1
-//                }
-//                else
-//                {
-//                    editPressed("Edit")
-////                    editPressed.setTitle("Edit", for: .normal)
-//                    firstnameField.alpha = 0
-//                    lastnameField.alpha = 0
-//                    emailField.alpha = 0
-//                    NumberField.alpha = 0
-//                }
-
         if isEditing != true {
             firstnameField.alpha = 1
             lastnameField.alpha = 1
@@ -66,64 +43,57 @@ class SettingsAccVC: UIViewController {
             emailField.alpha = 0
             NumberField.alpha = 0
         }
-    }
-    
-    @IBAction func back(_ sender: Any) {
-        self.dismiss(animated: true)
+        //        firstnameField.isEnabled = true
+        //        lastnameField.isEnabled = true
+        //        emailField.isEnabled = true
+        //        NumberField.isEnabled = true
+        
+        //        tableView.isEditing = !tableView.isEditing
+        //                if tableView.isEditing == true{
+        ////                    editButtonItem.setTitle("Done", for: .normal)
+        //                    editPressed("Done")
+        //                    firstnameField.alpha = 1
+        //                    lastnameField.alpha = 1
+        //                    emailField.alpha = 1
+        //                    NumberField.alpha = 1
+        //                }
+        //                else
+        //                {
+        //                    editPressed("Edit")
+        ////                    editPressed.setTitle("Edit", for: .normal)
+        //                    firstnameField.alpha = 0
+        //                    lastnameField.alpha = 0
+        //                    emailField.alpha = 0
+        //                    NumberField.alpha = 0
+        //                }
     }
     
     @IBAction func deleteAccPressed(_ sender: Any) {
-
+        
         let user = Auth.auth().currentUser
-
         user?.delete { error in
-          if let error = error {
-            // An error happened.
-          } else {
-            // Account deleted.
-              try!  Auth.auth().signOut()
-//              let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//
-//              let MainVC = storyboard.instantiateViewController(identifier: Constants.Storyboard.MainVC) as! MainVC
-//
-//      //      self.navigationController?.pushViewController(CartVC, animated: true)
-//              self.view.window?.rootViewController = MainVC
-//              self.view.window?.makeKeyAndVisible()
-//              self.navigationController?.popToRootViewController(animated: true)
-          }
+            if let err = error {
+                // An error happened.
+                let alert = Constants.createAlertController(title: "Error", message: "Oops, something went worng, Please try again later.")
+                self.present(alert, animated: true, completion: nil)
+                return
+            } else {
+                // Account deleted.
+                try!  Auth.auth().signOut()
+                let alert = Constants.createAlertController(title: "Success", message: "Your account will delete after 1 second")
+                self.present(alert, animated: true, completion: nil)
+                return
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.7) { [weak self] in
+                    let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainVC")
+                    mainVC.modalPresentationStyle = .fullScreen
+                    self?.present(mainVC, animated: true)
+                }
+            }
         }
-        
-//    let credential: AuthCredential
-//
-//        users.reauthenticate(with:credential) { error in
-//            if let error = error {
-//                // An error happened.
-//                showAlertWithErrorMessage(message: error.localizedDescription)
-//            } else {
-//                // User re-authenticated.
-//                users.delete { error in
-//                    if let error = error {
-//                        // An error happened.
-//                        showAlertWithErrorMessage(message: error.localizedDescription)
-//                    } else {
-//                        // Account deleted.
-//                        Database.database().reference(fromURL: kFirebaseLink).child(kUser).child(userID).removeValue()
-//
-//                        try!  Auth.auth().signOut()
-//                        self.navigationController?.popToRootViewController(animated: true)
-//                    }
-//                }
-//
-//                }
-//            }
-//        else{
-//            showAlertWithErrorMessage(message: "Try again later")
-//        }
     }
     
-    @IBAction func savePressed(_ sender: Any) {
+    func savePressed(_ sender: Any) {
         
     }
-    
     
 }

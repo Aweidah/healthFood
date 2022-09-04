@@ -137,9 +137,9 @@ class SettingsVC: UIViewController {
     
     @IBAction func logOutPressed(_ sender: Any) {
         try! FirebaseAuth.Auth.auth().signOut()
-//        let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainVC")
-//        self.navigationController?.pushViewController(mainVC, animated: true)
-                present(.init(nibName: "MenuVC", bundle: nil), animated: true)
+        let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainVC")
+        mainVC.modalPresentationStyle = .fullScreen
+        self.present(mainVC, animated: true)
     }
     
 }

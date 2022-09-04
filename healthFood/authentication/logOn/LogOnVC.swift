@@ -32,14 +32,14 @@ class LogOnVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            navigationController?.setNavigationBarHidden(true, animated: animated)
-        }
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
-            super.viewWillDisappear(animated)
-            navigationController?.setNavigationBarHidden(false, animated: animated)
-       }
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
     
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true)
@@ -48,7 +48,7 @@ class LogOnVC: UIViewController {
     // Check the fields and validate that the data is correct.
     
     func validateFields() -> String? {
-
+        
         // check that all fields are filled in
         if firstNameField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             lastNameField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
@@ -57,59 +57,59 @@ class LogOnVC: UIViewController {
             phoneField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             return "Please fill in all fields."
         }
-
-    // check if the password is secure
-    let cleanPassword = passwordField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-    
-    if Utilities.isPasswordValid(cleanPassword) == false {
-    
-    // Password isn't secure enough
-    return "Please make sure your password is at least 8 characters, contains a special character and a number."
-    }
+        
+        // check if the password is secure
+        let cleanPassword = passwordField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        if Utilities.isPasswordValid(cleanPassword) == false {
+            
+            // Password isn't secure enough
+            return "Please make sure your password is at least 8 characters, contains a special character and a number."
+        }
         return nil
     }
     
     
     @IBAction func logOnPressed(_ sender: Any) {
         
-    // Validate the field
-    
-    // Create cleaned versions of the data
-    let firstName = firstNameField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-    let lastName = lastNameField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-    let email = emailField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-    let password = passwordField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-    
-    // Create the user
-    Auth.auth().createUser(withEmail: email, password: password){ (result, err) in
+        // Validate the field
+        
+        // Create cleaned versions of the data
+        let firstName = firstNameField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let lastName = lastNameField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let email = emailField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let password = passwordField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        // Create the user
+        Auth.auth().createUser(withEmail: email, password: password){ (result, err) in
             
-    // Check for errors
-        if err != nil{
-            
-            // There was an error creating the user
-//                self.showError("Error creating user")
-        }
-        else{
-            
-            // User was created successfully, now store the first name and last name
-            let db = Firestore.firestore()
-            
-            db.collection("users").addDocument(data: ["firstname":firstName, "lastname":lastName, "uid": result!.user.uid ]) { (error) in
+            // Check for errors
+            if err != nil{
+                
+                // There was an error creating the user
+                //                self.showError("Error creating user")
             }
-        }
+            else{
+                
+                // User was created successfully, now store the first name and last name
+                let db = Firestore.firestore()
+                
+                db.collection("users").addDocument(data: ["firstname":firstName, "lastname":lastName, "uid": result!.user.uid ]) { (error) in
+                }
+            }
             // Transition to the home screen
             self.transitionToHome()
         }
-    
+        
     }
     
     func transitionToHome() {
         
-    let storyboard = UIStoryboard(name: "TabbarItems", bundle: nil)
-    
-    let TabBarVC = storyboard.instantiateViewController(identifier: Constants.Storyboard.TabBarVC) as? TabBarVC
-    
-    view.window?.rootViewController = TabBarVC
-    view.window?.makeKeyAndVisible()
+        let storyboard = UIStoryboard(name: "TabBarSB", bundle: nil)
+        
+        let TabBarVC = storyboard.instantiateViewController(identifier: Constants.Storyboard.TabBarVC) as? TabBarVC
+        
+        self.view.window?.rootViewController = TabBarVC
+        self.view.window?.makeKeyAndVisible()
     }
 }

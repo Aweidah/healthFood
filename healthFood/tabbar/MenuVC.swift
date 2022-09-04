@@ -7,16 +7,25 @@
 
 //import FirebaseDatabase
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
+import FirebaseCore
+import FirebaseAnalytics
 
-class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate ,  UISearchControllerDelegate {
+class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate ,  UISearchControllerDelegate, UISearchResultsUpdating {
     
-//    ,UICollectionViewDelegate , UICollectionViewDataSource , UISearchResultsUpdating
     
-//    self.UINavigationController.init(rootViewController: SingleFood_: ())
+    let db = Firestore.firestore()
     
-    var menuFoodArray = [menuFood]()
+    var scopeButtonPressed = false
+    var searching = false
     
-    let searchBar = UISearchController()
+    //old line code only menuFoodArray
+    var menuFoodArray = [menuFood]() //searchedperfume
+    var FoodArray = [menuFood]() //perfumeList
+    //    var filterdData: [String]!
+    let searchBar = UISearchController(searchResultsController: nil)
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuFoodArray.count
@@ -26,7 +35,7 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
         let cell = tableView.dequeueReusableCell(withIdentifier: "Mycell") as! TableViewCell
         
         let mydata = menuFoodArray[indexPath.row]
-        cell.fillCall(photo: mydata.photo, name: mydata.name, price: mydata.price)
+        cell.fillCall(photo: mydata.photo, name: mydata.name, type: mydata.type, price: mydata.price)
         
         return cell
     }
@@ -37,10 +46,6 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        menuFoodArray = []
-        
-        var menuFoodArray = [menuFood]()
-        
         for word in [menuFood]()
         {
             if word.name.uppercased().contains(searchText.uppercased())
@@ -48,16 +53,50 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
                 menuFoodArray.append(word)
             }
         }
-        
         self.tableView.reloadData()
     }
     
+    func updateSearchResults(for searchController: UISearchController) {
+        let scopeButton = searchController.searchBar.scopeButtonTitles![searchController.searchBar.selectedScopeButtonIndex]
+        
+        let searchText = searchController.searchBar.text!
+        if !searchText.isEmpty{
+            searching = true
+            menuFoodArray.removeAll()
+            
+            for menu in FoodArray {
+                if menu.name.lowercased().contains(searchText.lowercased()) && (menu.type == scopeButton || scopeButton == "All")
+                {
+                    menuFoodArray.append(menu)
+                }}}
+        else {
+            if scopeButtonPressed {
+                menuFoodArray.removeAll()
+                let scopeButton = searchController.searchBar.scopeButtonTitles![searchController.searchBar.selectedScopeButtonIndex]
+                for menu in FoodArray {
+                    if (menu.name == scopeButton || scopeButton == "All") {
+                        menuFoodArray.append(menu)
+                    }
+                }
+                searching = false
+                tableView.reloadData()
+            }
+            else {
+                searching = false
+                menuFoodArray.removeAll()
+                menuFoodArray = FoodArray
+            }
+            
+        }
+        tableView.reloadData()
+    }
 
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configureSearchController()
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -66,14 +105,15 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
         self.navigationItem.title = "Menu"
         navigationItem.searchController = searchBar
         
-        menuFoodArray.append(menuFood.init(photo: UIImage(named: "IMG_1.jpg")!, name: "Salat", price: 3.3))
-        menuFoodArray.append(menuFood.init(photo: UIImage(named: "IMG_2.jpg")!, name: "Freekeh", price: 6.0))
-        menuFoodArray.append(menuFood.init(photo: UIImage(named: "IMG_3.jpg")!, name: "Lemon Creamy", price: 6.0))
-        menuFoodArray.append(menuFood.init(photo: UIImage(named: "IMG_1.jpg")!, name: ".", price: 3.3))
-        menuFoodArray.append(menuFood.init(photo: UIImage(named: "IMG_2.jpg")!, name: ".", price: 3.3))
-        menuFoodArray.append(menuFood.init(photo: UIImage(named: "IMG_3.jpg")!, name: ".", price: 3.3))
-        menuFoodArray.append(menuFood.init(photo: UIImage(named: "IMG_2.jpg")!, name: ".", price: 3.3))
-        menuFoodArray.append(menuFood.init(photo: UIImage(named: "IMG_1.jpg")!, name: "okay", price: 3.3))
+        let menu1 = (menuFood.init(photo: UIImage(named: "IMG_1.jpg")!, name: "Salad", type: "", price: 3.3))
+        FoodArray.append(menu1)
+        menuFoodArray.append(menuFood.init(photo: UIImage(named: "IMG_2.jpg")!, name: "Freekeh", type: "", price: 6.0))
+        menuFoodArray.append(menuFood.init(photo: UIImage(named: "IMG_3.jpg")!, name: "Lemon Creamy", type: "", price: 6.0))
+        menuFoodArray.append(menuFood.init(photo: UIImage(named: "IMG_1.jpg")!, name: ".", type: "", price: 3.3))
+        menuFoodArray.append(menuFood.init(photo: UIImage(named: "IMG_2.jpg")!, name: ".", type: "", price: 3.3))
+        menuFoodArray.append(menuFood.init(photo: UIImage(named: "IMG_3.jpg")!, name: ".", type: "", price: 3.3))
+        menuFoodArray.append(menuFood.init(photo: UIImage(named: "IMG_2.jpg")!, name: ".", type: "", price: 3.3))
+        menuFoodArray.append(menuFood.init(photo: UIImage(named: "IMG_1.jpg")!, name: "okay", type: "", price: 3.3))
      
     }
     
@@ -81,7 +121,21 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
         
         let photo: UIImage
         let name: String
+        let type: String
         let price: Double
     }
-
+    
+    private func configureSearchController() {
+        searchBar.loadViewIfNeeded()
+        searchBar.searchResultsUpdater = self
+        searchBar.searchBar.delegate = self
+        searchBar.obscuresBackgroundDuringPresentation = false
+        searchBar.searchBar.enablesReturnKeyAutomatically = false
+        searchBar.searchBar.returnKeyType = UIReturnKeyType.done
+        searchBar.searchBar.scopeButtonTitles = ["Snack" , "Salad" , "Breakfast", "Dinner"]
+        self.navigationItem.hidesSearchBarWhenScrolling = false
+        self.navigationItem.searchController = searchBar
+        definesPresentationContext = true
+        //        searchBar.searchBar.placeholder = "Search Menu By Name"
+    }
 }

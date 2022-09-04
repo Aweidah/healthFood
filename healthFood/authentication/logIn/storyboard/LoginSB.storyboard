@@ -186,7 +186,7 @@
                                     <color key="baseBackgroundColor" name="IMG_btn"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="logInPressed:" destination="KLj-Sd-E4F" eventType="touchUpInside" id="ZOS-z8-wgc"/>
+                                    <action selector="logInPressed:" destination="KLj-Sd-E4F" eventType="touchUpInside" id="BbJ-fD-Co7"/>
                                 </connections>
                             </button>
                         </subviews>

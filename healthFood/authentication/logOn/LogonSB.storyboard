@@ -182,6 +182,9 @@
                                     <color key="baseForegroundColor" name="IMG_lbl"/>
                                     <color key="baseBackgroundColor" name="IMG_btn"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="logOnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="z7x-Ui-JMj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>

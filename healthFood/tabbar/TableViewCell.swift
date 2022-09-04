@@ -10,6 +10,7 @@ import UIKit
 class TableViewCell: UITableViewCell {
 
     @IBOutlet weak var LblName: UILabel!
+    @IBOutlet weak var LblType: UILabel!
     @IBOutlet weak var LblPrice: UILabel!
     @IBOutlet weak var AddCard: UIButton!
     @IBOutlet weak var imgFood: UIImageView!
@@ -19,10 +20,11 @@ class TableViewCell: UITableViewCell {
         // Initialization code
     }
     
-    func fillCall (photo : UIImage, name : String ,price : Double)
+    func fillCall (photo : UIImage, name : String , type: String ,price : Double)
     {
         imgFood.image = photo
         LblName.text = name
+        LblType.text = type
         LblPrice.text = "\(price)"
     }
     

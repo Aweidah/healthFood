@@ -46,7 +46,7 @@ class LogInVC: UIViewController {
     }
     
     private func setUpTestingData() {
-        self.fieldEmail.text = "test@yahoo.com"
+        self.fieldEmail.text = "khaled.aweidah@yahoo.com"
         self.fieldPassword.text = "P@ssw0rd1"
         
     }
@@ -97,7 +97,7 @@ class LogInVC: UIViewController {
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             
             if error != nil{
-                let alert = Constants.createAlertController(title: "Error", message: "There was an error in email field, check your email spilling, or this email does'nt exist.")
+                let alert = Constants.createAlertController(title: "Error", message: "There was an error in email field or password field, check your email spilling, or this email doesn't exist.")
                 self.present(alert, animated: true, completion: nil)
                 return
             }
