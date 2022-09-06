@@ -102,27 +102,52 @@ class SettingsAccVC: UIViewController {
     
     @IBAction func savePressed(_ sender: Any) {
         
+        //        let db = Firestore.firestore()
+        //        let userEmail = Auth.auth().currentUser?.email
+        //
+        //        db.collection("users")
+        //            .whereField("email", isEqualTo: userEmail ?? "")
+        //            .getDocuments() { (querySnapshot, err) in
+        //                if let err = err {
+        //                    print(err.localizedDescription)
+        //                    // Some error occured
+        //                } else if querySnapshot!.documents.count != 1 {
+        //                    // Perhaps this is an error for you?
+        //                } else {
+        //                    let document = querySnapshot!.documents.first
+        //                    document?.reference.updateData([
+        //                        "email": self.emailField.text!,
+        //                        "firstname": self.firstnameField.text!,
+        //                        "lastname": self.lastnameField.text!,
+        //                        "number": self.phoneField.text!
+        //                    ])
+        //                }
+        //            }
         let db = Firestore.firestore()
-        let userEmail = Auth.auth().currentUser?.email
         
-        db.collection("users")
-            .whereField("email", isEqualTo: userEmail ?? "")
-            .getDocuments() { (querySnapshot, err) in
-                if let err = err {
-                    print(err.localizedDescription)
-                    // Some error occured
-                } else if querySnapshot!.documents.count != 1 {
-                    // Perhaps this is an error for you?
-                } else {
-                    let document = querySnapshot!.documents.first
-                    document?.reference.updateData([
-                        "email": self.emailField.text!,
-                        "firstname": self.firstnameField.text!,
-                        "lastname": self.lastnameField.text!,
-                        "number": self.phoneField.text!
-                    ])
+        let userID = Auth.auth().currentUser?.uid
+        let userEmail = Auth.auth().currentUser?.email
+        let currentUser = Auth.auth().currentUser
+        if  firstnameField.text != nil &&
+                lastnameField.text != nil &&
+                emailField.text != nil &&
+                phoneField.text != nil
+        {
+            db.collection("users").document("\(userID!)").updateData([
+                "firstname": firstnameField.text!,
+                "lastname": lastnameField.text!,
+                "email": emailField.text!,
+                "number": phoneField.text!
+            ])
+            if emailField.text != userEmail{
+                currentUser?.updateEmail(to: emailField.text!){ error in
+                    if let error = error{
+                        print (error)
+                    }
                 }
             }
+        }
+        
     }
-    
 }
+

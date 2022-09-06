@@ -1,9 +1,9 @@
 
 /* Class = "UILabel"; text = "Change Number"; ObjectID = "0oT-1c-5z9"; */
-"0oT-1c-5z9.text" = "Change Number";
+"0oT-1c-5z9.text" = "تغيير رقم";
 
 /* Class = "UIButton"; configuration.title = "Save"; ObjectID = "5Hr-sL-kOc"; */
-"5Hr-sL-kOc.configuration.title" = "Save";
+"5Hr-sL-kOc.configuration.title" = "حفظ";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "5Hr-sL-kOc"; */
 "5Hr-sL-kOc.normalTitle" = "Button";
@@ -12,73 +12,73 @@
 "AAU-Zc-fJs.text" = "khalked";
 
 /* Class = "UILabel"; text = "Cart"; ObjectID = "AlW-N9-hSL"; */
-"AlW-N9-hSL.text" = "Cart";
+"AlW-N9-hSL.text" = "سلة";
 
 /* Class = "UILabel"; text = "Current Password"; ObjectID = "BrA-15-fef"; */
-"BrA-15-fef.text" = "Current Password";
+"BrA-15-fef.text" = "كلمة المرور الحالية";
 
 /* Class = "UITextField"; placeholder = "Enter your first name..."; ObjectID = "Ctd-8G-L9d"; */
-"Ctd-8G-L9d.placeholder" = "Enter your first name...";
+"Ctd-8G-L9d.placeholder" = "أدخل كلمة المرور الحالية...";
 
 /* Class = "UILabel"; text = "Account Info"; ObjectID = "D1a-Xe-V8z"; */
-"D1a-Xe-V8z.text" = "Account Info";
+"D1a-Xe-V8z.text" = "معلومات الحساب";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "FQT-y7-s9J"; */
 "FQT-y7-s9J.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Enter your first name..."; ObjectID = "FgW-5h-2hK"; */
-"FgW-5h-2hK.placeholder" = "Enter your first name...";
+"FgW-5h-2hK.placeholder" = "أدخل بريدك الإلكتروني ...";
 
 /* Class = "UILabel"; text = "Email"; ObjectID = "GMC-Ut-zIx"; */
-"GMC-Ut-zIx.text" = "Email";
+"GMC-Ut-zIx.text" = "البريد الإلكتروني";
 
 /* Class = "UIButton"; configuration.title = "Edit"; ObjectID = "Jx7-xo-be4"; */
-"Jx7-xo-be4.configuration.title" = "Edit";
+"Jx7-xo-be4.configuration.title" = "تعديل";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Jx7-xo-be4"; */
 "Jx7-xo-be4.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "Phone Number"; ObjectID = "Qya-nB-fae"; */
-"Qya-nB-fae.text" = "Phone Number";
+"Qya-nB-fae.text" = "رقم الهاتف";
 
 /* Class = "UILabel"; text = "Show Notifications"; ObjectID = "Tvz-ib-EsC"; */
-"Tvz-ib-EsC.text" = "Show Notifications";
+"Tvz-ib-EsC.text" = "اظهار الاشعارات";
 
 /* Class = "UITextField"; placeholder = "Enter your last name..."; ObjectID = "Vki-fI-UA7"; */
-"Vki-fI-UA7.placeholder" = "Enter your last name...";
+"Vki-fI-UA7.placeholder" = "أدخل اسمك الأخير ...";
 
 /* Class = "UITextField"; placeholder = "Enter your first name..."; ObjectID = "Wd6-sL-vME"; */
-"Wd6-sL-vME.placeholder" = "Enter your first name...";
+"Wd6-sL-vME.placeholder" = "أدخل رقم هاتفك...";
 
 /* Class = "UIButton"; configuration.title = "Save"; ObjectID = "Xe3-cs-aXf"; */
-"Xe3-cs-aXf.configuration.title" = "Save";
+"Xe3-cs-aXf.configuration.title" = "حفظ";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Xe3-cs-aXf"; */
 "Xe3-cs-aXf.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "Change Password"; ObjectID = "YJ1-1E-ncT"; */
-"YJ1-1E-ncT.text" = "Change Password";
+"YJ1-1E-ncT.text" = "غير كلمة السر";
 
 /* Class = "UILabel"; text = "LogOut"; ObjectID = "Yie-Ut-Dkg"; */
-"Yie-Ut-Dkg.text" = "LogOut";
+"Yie-Ut-Dkg.text" = "تسجيل خروج";
 
 /* Class = "UILabel"; text = "Last Name"; ObjectID = "bIn-Xa-ZLK"; */
-"bIn-Xa-ZLK.text" = "Last Name";
+"bIn-Xa-ZLK.text" = "اسم العائلة";
 
 /* Class = "UILabel"; text = "Account Info"; ObjectID = "boq-bl-p9u"; */
-"boq-bl-p9u.text" = "Account Info";
+"boq-bl-p9u.text" = "معلومات الحساب";
 
 /* Class = "UITextField"; placeholder = "Enter your first name..."; ObjectID = "hYj-NE-fW9"; */
-"hYj-NE-fW9.placeholder" = "Enter your first name...";
+"hYj-NE-fW9.placeholder" = "أدخل اسمك الأول ...";
 
 /* Class = "UILabel"; text = "Cart"; ObjectID = "hgd-Wm-iNq"; */
-"hgd-Wm-iNq.text" = "Cart";
+"hgd-Wm-iNq.text" = "سلة";
 
 /* Class = "UIButton"; normalTitle = "Delete Account"; ObjectID = "i1t-2h-PuT"; */
-"i1t-2h-PuT.normalTitle" = "Delete Account";
+"i1t-2h-PuT.normalTitle" = "حذف الحساب";
 
 /* Class = "UILabel"; text = "Languages"; ObjectID = "iZk-6J-GOl"; */
-"iZk-6J-GOl.text" = "Languages";
+"iZk-6J-GOl.text" = "اللغة";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "kn3-lg-Xby"; */
 "kn3-lg-Xby.text" = "Label";
@@ -87,25 +87,26 @@
 "lK4-k6-dvA.text" = "Label";
 
 /* Class = "UILabel"; text = "Toggle to allow or prevent the application from sending notifications."; ObjectID = "nAf-tB-trA"; */
-"nAf-tB-trA.text" = "Toggle to allow or prevent the application from sending notifications.";
+"nAf-tB-trA.text" = "قم بالتبديل للسماح أو منع التطبيق من إرسال الإشعارات.";
 
 /* Class = "UITextField"; placeholder = "Enter your last name..."; ObjectID = "p3D-Ol-f8Q"; */
-"p3D-Ol-f8Q.placeholder" = "Enter your last name...";
+"p3D-Ol-f8Q.placeholder" = "أدخل كلمة المرور الجديدة...";
 
 /* Class = "UILabel"; text = "Contact Us"; ObjectID = "s0o-pO-H6N"; */
-"s0o-pO-H6N.text" = "Contact Us";
+"s0o-pO-H6N.text" = "اتصل بنا";
 
 /* Class = "UILabel"; text = "First Name"; ObjectID = "uGA-7D-4Ve"; */
-"uGA-7D-4Ve.text" = "First Name";
+"uGA-7D-4Ve.text" = "الاسم الاول";
 
 /* Class = "UIButton"; configuration.title = "Add"; ObjectID = "ui1-U8-tjb"; */
-"ui1-U8-tjb.configuration.title" = "Add";
+"ui1-U8-tjb.configuration.title" = "إضافة";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ui1-U8-tjb"; */
 "ui1-U8-tjb.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "New Password"; ObjectID = "yyq-Zc-0CU"; */
-"yyq-Zc-0CU.text" = "New Password";
+"yyq-Zc-0CU.text" = "كلمة السر الجديدة";
 
 /* Class = "UINavigationItem"; title = "Settings"; ObjectID = "zqq-b6-iB8"; */
-"zqq-b6-iB8.title" = "Settings";
+"zqq-b6-iB8.title" = "إعدادات";
+

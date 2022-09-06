@@ -18,7 +18,7 @@
 "BrA-15-fef.text" = "Current Password";
 
 /* Class = "UITextField"; placeholder = "Enter your first name..."; ObjectID = "Ctd-8G-L9d"; */
-"Ctd-8G-L9d.placeholder" = "Enter your first name...";
+"Ctd-8G-L9d.placeholder" = "Enter your current password...";
 
 /* Class = "UILabel"; text = "Account Info"; ObjectID = "D1a-Xe-V8z"; */
 "D1a-Xe-V8z.text" = "Account Info";
@@ -27,7 +27,7 @@
 "FQT-y7-s9J.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Enter your first name..."; ObjectID = "FgW-5h-2hK"; */
-"FgW-5h-2hK.placeholder" = "Enter your first name...";
+"FgW-5h-2hK.placeholder" = "Enter your email...";
 
 /* Class = "UILabel"; text = "Email"; ObjectID = "GMC-Ut-zIx"; */
 "GMC-Ut-zIx.text" = "Email";
@@ -48,7 +48,7 @@
 "Vki-fI-UA7.placeholder" = "Enter your last name...";
 
 /* Class = "UITextField"; placeholder = "Enter your first name..."; ObjectID = "Wd6-sL-vME"; */
-"Wd6-sL-vME.placeholder" = "Enter your first name...";
+"Wd6-sL-vME.placeholder" = "Enter your phone number...";
 
 /* Class = "UIButton"; configuration.title = "Save"; ObjectID = "Xe3-cs-aXf"; */
 "Xe3-cs-aXf.configuration.title" = "Save";
@@ -90,7 +90,7 @@
 "nAf-tB-trA.text" = "Toggle to allow or prevent the application from sending notifications.";
 
 /* Class = "UITextField"; placeholder = "Enter your last name..."; ObjectID = "p3D-Ol-f8Q"; */
-"p3D-Ol-f8Q.placeholder" = "Enter your last name...";
+"p3D-Ol-f8Q.placeholder" = "Enter your new password...";
 
 /* Class = "UILabel"; text = "Contact Us"; ObjectID = "s0o-pO-H6N"; */
 "s0o-pO-H6N.text" = "Contact Us";
