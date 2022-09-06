@@ -9,47 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Launch MainVC-->
-        <scene sceneID="SKv-FM-7Mb">
-            <objects>
-                <viewController id="Dnc-mw-fKj" customClass="LaunchMainVC" customModule="healthFoodHTU" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="s8R-SK-fls">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgs-EM-Ycg">
-                                <rect key="frame" x="57" y="298" width="300" height="300"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="NHR-cB-HCL"/>
-                                    <constraint firstAttribute="width" constant="300" id="dpn-0g-uG2"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Healthy Food" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRm-is-Fbs">
-                                <rect key="frame" x="30" y="613" width="354" height="26.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
-                                <color key="textColor" name="IMG_btn"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Vcd-xj-rjy"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="lgs-EM-Ycg" firstAttribute="centerY" secondItem="s8R-SK-fls" secondAttribute="centerY" id="75I-l5-WXS"/>
-                            <constraint firstItem="rRm-is-Fbs" firstAttribute="leading" secondItem="Vcd-xj-rjy" secondAttribute="leading" constant="30" id="aos-Jk-0re"/>
-                            <constraint firstItem="lgs-EM-Ycg" firstAttribute="centerX" secondItem="s8R-SK-fls" secondAttribute="centerX" id="eeT-L7-SHR"/>
-                            <constraint firstAttribute="trailing" secondItem="rRm-is-Fbs" secondAttribute="trailing" constant="30" id="jqM-xO-WER"/>
-                            <constraint firstItem="rRm-is-Fbs" firstAttribute="top" secondItem="lgs-EM-Ycg" secondAttribute="bottom" constant="15" id="m0l-Tp-aXX"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="lottieViewLchSn" destination="lgs-EM-Ycg" id="L3x-zA-rFg"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="T4X-Ew-39e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1139" y="50"/>
-        </scene>
         <!--Healthy Food-->
         <scene sceneID="5SR-Je-v7t">
             <objects>

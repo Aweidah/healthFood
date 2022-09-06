@@ -97,7 +97,7 @@ class LogInVC: UIViewController {
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             
             if error != nil{
-                let alert = Constants.createAlertController(title: "Error", message: "There was an error in email field or password field, check your email spilling, or this email doesn't exist.")
+                let alert = Constants.createAlertController(title: "Error", message: "wrong_login_info_message".localized)
                 self.present(alert, animated: true, completion: nil)
                 return
             }

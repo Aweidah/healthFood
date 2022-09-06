@@ -123,22 +123,22 @@ class OffersVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     //    var menuFoodArray = [menuFood]() //searchedperfume
     //    var FoodArray = [menuFood]() //perfumeList
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "SettingsSB", bundle: nil)
+        let cartVC = sb.instantiateViewController(identifier: Constants.Storyboard.CartVC) as? CartVC
         
-        let cartVC = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.CartVC) as? CartVC
-        
-        //        if searching || scopeButtonPressed {
-        //            CartVC?.photo = UIImage(named: "\(menuFoodArray[indexPath.row].photo)")!
-        //            CartVC?.name = (menuFoodArray[indexPath.row].name)
-        //            CartVC?.price = ("\(menuFoodArray[indexPath.row].price) Jd")
-        //            self.present((cartVC)!, animated: true, completion: nil)
-        //        }
-        //        else {
-        //            CartVC?.photo = UIImage(named: FoodArray[indexPath.row].photo)!
-        //            CartVC?.name = (FoodArray[indexPath.row].name)
-        //            CartVC?.price = ("\(FoodArray[indexPath.row].price) JD")
-        //            self.present((cartVC)!, animated: true, completion: nil)
-        //        }
+                if searching || scopeButtonPressed {
+                    cartVC?.photo = UIImage(named: "\(menuFoodArray[indexPath.row].photo)")!
+                    cartVC?.name = (menuFoodArray[indexPath.row].name)
+                    cartVC?.price = ("\(menuFoodArray[indexPath.row].price) Jd")
+                    self.present((cartVC)!, animated: true, completion: nil)
+                }
+                else {
+                    cartVC?.photo = UIImage(named: "\(FoodArray[indexPath.row].photo)")!
+                    cartVC?.name = (FoodArray[indexPath.row].name)
+                    cartVC?.price = ("\(FoodArray[indexPath.row].price) JD")
+                    self.present((cartVC)!, animated: true, completion: nil)
+                }
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  healthFood
+
+  Created by khaled Aweidah on 9/6/22.
+  
+*/
+
+"wrong_login_info_message" = "There was an error in email field or password field, check your email spilling, or this email doesn't exist.";

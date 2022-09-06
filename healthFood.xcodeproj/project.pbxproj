@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E00D3B1A28B897D8001D4EF2 /* OffersSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E00D3B1928B897D8001D4EF2 /* OffersSB.storyboard */; };
-		E00D3B1C28B89887001D4EF2 /* SettingsSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E00D3B1B28B89887001D4EF2 /* SettingsSB.storyboard */; };
 		E00D3B2028B89924001D4EF2 /* MenuSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E00D3B1F28B89924001D4EF2 /* MenuSB.storyboard */; };
 		E00D3B2228B89ABF001D4EF2 /* SettingsChangeNumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00D3B2128B89ABF001D4EF2 /* SettingsChangeNumVC.swift */; };
 		E0230D0028A5C69E00789EB5 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0230CFF28A5C69E00789EB5 /* SettingsVC.swift */; };
@@ -33,13 +32,15 @@
 		E0F1957028BD9C620044F663 /* food-vlogger.json in Resources */ = {isa = PBXBuildFile; fileRef = E0F1956F28BD9C620044F663 /* food-vlogger.json */; };
 		E0F1957228BDA9420044F663 /* LaunchMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F1957128BDA9420044F663 /* LaunchMainVC.swift */; };
 		E0F1957428BDAC610044F663 /* coconut.json in Resources */ = {isa = PBXBuildFile; fileRef = E0F1957328BDAC610044F663 /* coconut.json */; };
+		E0F1957F28C6A2A00044F663 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F1957E28C6A2A00044F663 /* Extensions.swift */; };
+		E0F1958028C6A3150044F663 /* SettingsSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0F1958228C6A3150044F663 /* SettingsSB.storyboard */; };
 		E0F3062D2889423C0029E3B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F3062C2889423C0029E3B8 /* AppDelegate.swift */; };
-		E0F3062F2889423C0029E3B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F3062E2889423C0029E3B8 /* SceneDelegate.swift */; };
 		E0F306342889423C0029E3B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0F306322889423C0029E3B8 /* Main.storyboard */; };
 		E0F306362889423F0029E3B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0F306352889423F0029E3B8 /* Assets.xcassets */; };
 		E0F306392889423F0029E3B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0F306372889423F0029E3B8 /* LaunchScreen.storyboard */; };
 		E0F56A7A28B50F98000AEFCA /* SettingsAccVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F56A7928B50F98000AEFCA /* SettingsAccVC.swift */; };
 		E0F7E9E828B658A800E989F5 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F7E9E728B658A800E989F5 /* CartVC.swift */; };
+		E0FEDD9528C6A77100883B21 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E0F1959128C6A5670044F663 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +48,6 @@
 		A3C5E80270A23D577B6D6DEE /* Pods-healthFood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-healthFood.debug.xcconfig"; path = "Target Support Files/Pods-healthFood/Pods-healthFood.debug.xcconfig"; sourceTree = "<group>"; };
 		CC2C6D29D1BA72F5FFCE7BF5 /* Pods-healthFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-healthFood.release.xcconfig"; path = "Target Support Files/Pods-healthFood/Pods-healthFood.release.xcconfig"; sourceTree = "<group>"; };
 		E00D3B1928B897D8001D4EF2 /* OffersSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OffersSB.storyboard; sourceTree = "<group>"; };
-		E00D3B1B28B89887001D4EF2 /* SettingsSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsSB.storyboard; sourceTree = "<group>"; };
 		E00D3B1F28B89924001D4EF2 /* MenuSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuSB.storyboard; sourceTree = "<group>"; };
 		E00D3B2128B89ABF001D4EF2 /* SettingsChangeNumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsChangeNumVC.swift; sourceTree = "<group>"; };
 		E0230CFF28A5C69E00789EB5 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
@@ -72,9 +72,16 @@
 		E0F1956F28BD9C620044F663 /* food-vlogger.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "food-vlogger.json"; sourceTree = "<group>"; };
 		E0F1957128BDA9420044F663 /* LaunchMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchMainVC.swift; sourceTree = "<group>"; };
 		E0F1957328BDAC610044F663 /* coconut.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coconut.json; sourceTree = "<group>"; };
+		E0F1957C28C6A2600044F663 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		E0F1957D28C6A2600044F663 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		E0F1957E28C6A2A00044F663 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E0F1958128C6A3150044F663 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SettingsSB.storyboard; sourceTree = "<group>"; };
+		E0F1958428C6A3190044F663 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SettingsSB.strings; sourceTree = "<group>"; };
+		E0F1958628C6A34D0044F663 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/SettingsSB.strings; sourceTree = "<group>"; };
+		E0F1959028C6A5670044F663 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E0F1959228C6A5690044F663 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E0F306292889423C0029E3B8 /* healthFoodHTU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = healthFoodHTU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0F3062C2889423C0029E3B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E0F3062E2889423C0029E3B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E0F306332889423C0029E3B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E0F306352889423F0029E3B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0F306382889423F0029E3B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -145,7 +152,7 @@
 		E025C03528A98C63001B7D4B /* storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				E00D3B1B28B89887001D4EF2 /* SettingsSB.storyboard */,
+				E0F1958228C6A3150044F663 /* SettingsSB.storyboard */,
 			);
 			name = storyboard;
 			path = ..;
@@ -245,6 +252,7 @@
 				E07BAFD7289EDB6200EB737D /* AppButton.swift */,
 				E093EF9F28A033B3009E4D11 /* Utilities.swift */,
 				E093EFC328A3DAFB009E4D11 /* Constants.swift */,
+				E0F1957E28C6A2A00044F663 /* Extensions.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -304,11 +312,11 @@
 				E02E4882289A77210003B4FD /* tabbar */,
 				E025C03428A98A69001B7D4B /* tabbar Items */,
 				E0F3062C2889423C0029E3B8 /* AppDelegate.swift */,
-				E0F3062E2889423C0029E3B8 /* SceneDelegate.swift */,
 				E07BAFD6289ED82A00EB737D /* ui */,
 				E0F306352889423F0029E3B8 /* Assets.xcassets */,
 				E0F306372889423F0029E3B8 /* LaunchScreen.storyboard */,
 				E0F3063A2889423F0029E3B8 /* Info.plist */,
+				E0F1959128C6A5670044F663 /* Localizable.strings */,
 			);
 			path = healthFood;
 			sourceTree = "<group>";
@@ -394,6 +402,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = E0F306202889423B0029E3B8;
 			productRefGroup = E0F3062A2889423C0029E3B8 /* Products */;
@@ -413,12 +422,13 @@
 				E0F1957028BD9C620044F663 /* food-vlogger.json in Resources */,
 				E0F306392889423F0029E3B8 /* LaunchScreen.storyboard in Resources */,
 				E03EBFA4289BD129001650F8 /* GoogleService-Info.plist in Resources */,
+				E0FEDD9528C6A77100883B21 /* Localizable.strings in Resources */,
 				E00D3B2028B89924001D4EF2 /* MenuSB.storyboard in Resources */,
 				E0F306362889423F0029E3B8 /* Assets.xcassets in Resources */,
 				E0F1957428BDAC610044F663 /* coconut.json in Resources */,
 				E00D3B1A28B897D8001D4EF2 /* OffersSB.storyboard in Resources */,
 				E02E487C289A744B0003B4FD /* LoginSB.storyboard in Resources */,
-				E00D3B1C28B89887001D4EF2 /* SettingsSB.storyboard in Resources */,
+				E0F1958028C6A3150044F663 /* SettingsSB.storyboard in Resources */,
 				E0F306342889423C0029E3B8 /* Main.storyboard in Resources */,
 				E02E487A289A74300003B4FD /* LogonSB.storyboard in Resources */,
 				E02E4887289A777B0003B4FD /* TabBarSB.storyboard in Resources */,
@@ -482,6 +492,7 @@
 				E063F21628895606004EA8A5 /* MenuVC.swift in Sources */,
 				E093EFA028A033B3009E4D11 /* Utilities.swift in Sources */,
 				E06FBBFD2893228A00FA9A5F /* LogInVC.swift in Sources */,
+				E0F1957F28C6A2A00044F663 /* Extensions.swift in Sources */,
 				E02E487F289A75A50003B4FD /* ForgotPasswordVC.swift in Sources */,
 				E093EFC428A3DAFB009E4D11 /* Constants.swift in Sources */,
 				E024F7E4289A813800FCFED8 /* MainVC.swift in Sources */,
@@ -493,17 +504,36 @@
 				E0F7E9E828B658A800E989F5 /* CartVC.swift in Sources */,
 				E02E4885289A77560003B4FD /* TabBarVC.swift in Sources */,
 				E063F214288955D6004EA8A5 /* OffersVC.swift in Sources */,
-				E0F3062F2889423C0029E3B8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		E0F1958228C6A3150044F663 /* SettingsSB.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0F1958128C6A3150044F663 /* Base */,
+				E0F1958428C6A3190044F663 /* en */,
+				E0F1958628C6A34D0044F663 /* ar */,
+			);
+			name = SettingsSB.storyboard;
+			sourceTree = "<group>";
+		};
+		E0F1959128C6A5670044F663 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0F1959028C6A5670044F663 /* en */,
+				E0F1959228C6A5690044F663 /* ar */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E0F306322889423C0029E3B8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E0F306332889423C0029E3B8 /* Base */,
+				E0F1957C28C6A2600044F663 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -512,6 +542,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E0F306382889423F0029E3B8 /* Base */,
+				E0F1957D28C6A2600044F663 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -523,6 +554,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -585,6 +617,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

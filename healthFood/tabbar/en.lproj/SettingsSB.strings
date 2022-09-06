@@ -1,0 +1,112 @@
+
+/* Class = "UILabel"; text = "Change Number"; ObjectID = "0oT-1c-5z9"; */
+"0oT-1c-5z9.text" = "Change Number";
+
+/* Class = "UIButton"; configuration.title = "Save"; ObjectID = "5Hr-sL-kOc"; */
+"5Hr-sL-kOc.configuration.title" = "Save";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "5Hr-sL-kOc"; */
+"5Hr-sL-kOc.normalTitle" = "Button";
+
+/* Class = "UITextField"; text = "khalked"; ObjectID = "AAU-Zc-fJs"; */
+"AAU-Zc-fJs.text" = "khalked";
+
+/* Class = "UILabel"; text = "Cart"; ObjectID = "AlW-N9-hSL"; */
+"AlW-N9-hSL.text" = "Cart";
+
+/* Class = "UILabel"; text = "Current Password"; ObjectID = "BrA-15-fef"; */
+"BrA-15-fef.text" = "Current Password";
+
+/* Class = "UITextField"; placeholder = "Enter your first name..."; ObjectID = "Ctd-8G-L9d"; */
+"Ctd-8G-L9d.placeholder" = "Enter your first name...";
+
+/* Class = "UILabel"; text = "Account Info"; ObjectID = "D1a-Xe-V8z"; */
+"D1a-Xe-V8z.text" = "Account Info";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "FQT-y7-s9J"; */
+"FQT-y7-s9J.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Enter your first name..."; ObjectID = "FgW-5h-2hK"; */
+"FgW-5h-2hK.placeholder" = "Enter your first name...";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "GMC-Ut-zIx"; */
+"GMC-Ut-zIx.text" = "Email";
+
+/* Class = "UIButton"; configuration.title = "Edit"; ObjectID = "Jx7-xo-be4"; */
+"Jx7-xo-be4.configuration.title" = "Edit";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Jx7-xo-be4"; */
+"Jx7-xo-be4.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Phone Number"; ObjectID = "Qya-nB-fae"; */
+"Qya-nB-fae.text" = "Phone Number";
+
+/* Class = "UILabel"; text = "Show Notifications"; ObjectID = "Tvz-ib-EsC"; */
+"Tvz-ib-EsC.text" = "Show Notifications";
+
+/* Class = "UITextField"; placeholder = "Enter your last name..."; ObjectID = "Vki-fI-UA7"; */
+"Vki-fI-UA7.placeholder" = "Enter your last name...";
+
+/* Class = "UITextField"; placeholder = "Enter your first name..."; ObjectID = "Wd6-sL-vME"; */
+"Wd6-sL-vME.placeholder" = "Enter your first name...";
+
+/* Class = "UIButton"; configuration.title = "Save"; ObjectID = "Xe3-cs-aXf"; */
+"Xe3-cs-aXf.configuration.title" = "Save";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Xe3-cs-aXf"; */
+"Xe3-cs-aXf.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Change Password"; ObjectID = "YJ1-1E-ncT"; */
+"YJ1-1E-ncT.text" = "Change Password";
+
+/* Class = "UILabel"; text = "LogOut"; ObjectID = "Yie-Ut-Dkg"; */
+"Yie-Ut-Dkg.text" = "LogOut";
+
+/* Class = "UILabel"; text = "Last Name"; ObjectID = "bIn-Xa-ZLK"; */
+"bIn-Xa-ZLK.text" = "Last Name";
+
+/* Class = "UILabel"; text = "Account Info"; ObjectID = "boq-bl-p9u"; */
+"boq-bl-p9u.text" = "Account Info";
+
+/* Class = "UITextField"; placeholder = "Enter your first name..."; ObjectID = "hYj-NE-fW9"; */
+"hYj-NE-fW9.placeholder" = "Enter your first name...";
+
+/* Class = "UILabel"; text = "Cart"; ObjectID = "hgd-Wm-iNq"; */
+"hgd-Wm-iNq.text" = "Cart";
+
+/* Class = "UIButton"; normalTitle = "Delete Account"; ObjectID = "i1t-2h-PuT"; */
+"i1t-2h-PuT.normalTitle" = "Delete Account";
+
+/* Class = "UILabel"; text = "Languages"; ObjectID = "iZk-6J-GOl"; */
+"iZk-6J-GOl.text" = "Languages";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "kn3-lg-Xby"; */
+"kn3-lg-Xby.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "lK4-k6-dvA"; */
+"lK4-k6-dvA.text" = "Label";
+
+/* Class = "UILabel"; text = "Toggle to allow or prevent the application from sending notifications."; ObjectID = "nAf-tB-trA"; */
+"nAf-tB-trA.text" = "Toggle to allow or prevent the application from sending notifications.";
+
+/* Class = "UITextField"; placeholder = "Enter your last name..."; ObjectID = "p3D-Ol-f8Q"; */
+"p3D-Ol-f8Q.placeholder" = "Enter your last name...";
+
+/* Class = "UILabel"; text = "Contact Us"; ObjectID = "s0o-pO-H6N"; */
+"s0o-pO-H6N.text" = "Contact Us";
+
+/* Class = "UILabel"; text = "First Name"; ObjectID = "uGA-7D-4Ve"; */
+"uGA-7D-4Ve.text" = "First Name";
+
+/* Class = "UIButton"; configuration.title = "Add"; ObjectID = "ui1-U8-tjb"; */
+"ui1-U8-tjb.configuration.title" = "Add";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ui1-U8-tjb"; */
+"ui1-U8-tjb.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "New Password"; ObjectID = "yyq-Zc-0CU"; */
+"yyq-Zc-0CU.text" = "New Password";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "zqq-b6-iB8"; */
+"zqq-b6-iB8.title" = "Settings";
+

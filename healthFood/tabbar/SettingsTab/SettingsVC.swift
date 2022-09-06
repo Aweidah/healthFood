@@ -9,9 +9,11 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 import Sheeeeeeeeet
+import MOLH
 
 class SettingsVC: UIViewController {
     
+    @IBOutlet weak var ImgPro: UIImageView!
     //User name
     @IBOutlet weak var lblFullname: UILabel!
     //User location
@@ -24,11 +26,11 @@ class SettingsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        if (isArabic()) {
-        //            self.lblSelectedLanguage.text = "العربية"
-        //        } else {
-        //            self.lblSelectedLanguage.text = "English"
-        //        }
+        if (isArabic()) {
+            self.lblSelectedLanguage.text = "العربية"
+        } else {
+            self.lblSelectedLanguage.text = "English"
+        }
         
         let db = Firestore.firestore()
         
@@ -40,26 +42,24 @@ class SettingsVC: UIViewController {
                     for document in querySnapshot!.documents {
                         print("\(document.documentID) => \(document.data())")
                         //               print("\(document.get("firstname"))")
-                        self!.lblFullname.text = "\(document.get("firstname") as? String ?? "")  \(document.get("lastname") as? String ?? "")"
-                        //               self?.lblFullname.
+                        self!.lblFullname.text = "\(document.get("firstname") as! String) \(document.get("lastname") as! String)"
+                        self!.lblLocation.text = (document.get("uid") as! String)
+                        //self!.ImgPro = (document.get("img") as? UIImageView)
                     }
                 }
             }
     }
     
-    //    ref.collection("perfumes").getDocuments() {[weak self] (querySnapshot, err) in
-    //                if let err = err {
-    //                    print("Error getting documents: \(err)")
-    //                } else {
-    //                    for document in querySnapshot!.documents {
-    //                        let nam = document.data()["name"] as? String
-    //                        let img = document.data()["image"] as? String
-    //                        let prc = document.data()["price"] as? Double
-    //                        let gender = document.data()["Gender"] as? String
-    //                        let doc = PerfumeData(pName: nam ?? "", pImg: img ?? "" , pPrice: prc ?? 0 , pGender: gender ?? "")
-    //                        self?.perfumeList.append(doc)
+    func isArabic() -> Bool {
+        if (MOLHLanguage.currentAppleLanguage() == "ar"){
+            return true
+        }else{
+            return false
+        }
+    }
     
     @IBAction func notificationsAction(_ sender: Any) {
+        
     }
     
     @IBAction func CartPressed(_ sender: Any) {
@@ -111,20 +111,19 @@ class SettingsVC: UIViewController {
                 switch (value) {
                 case 1:
                     //arabic
-                    //                    if (MOLHLanguage.currentAppleLanguage() == "en") {
-                    //                        MOLH.setLanguageTo("ar")
-                    //                        MOLHLanguage.setAppleLAnguageTo("ar")
-                    //                        MOLH.reset()
-                    //
-                    //                    }
+                    if (MOLHLanguage.currentAppleLanguage() == "en") {
+                        MOLH.setLanguageTo("ar")
+                        MOLHLanguage.setAppleLAnguageTo("ar")
+                        MOLH.reset()
+                    }
                     break
                 case 2:
                     //english
-                    //                    if (MOLHLanguage.currentAppleLanguage() == "ar") {
-                    //                        MOLH.setLanguageTo("en")
-                    //                        MOLHLanguage.setAppleLAnguageTo("en")
-                    //                        MOLH.reset()
-                    //                    }
+                    if (MOLHLanguage.currentAppleLanguage() == "ar") {
+                        MOLH.setLanguageTo("en")
+                        MOLHLanguage.setAppleLAnguageTo("en")
+                        MOLH.reset()
+                    }
                     break
                 default:
                     print("1")
@@ -141,5 +140,4 @@ class SettingsVC: UIViewController {
         mainVC.modalPresentationStyle = .fullScreen
         self.present(mainVC, animated: true)
     }
-    
 }

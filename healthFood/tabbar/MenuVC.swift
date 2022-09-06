@@ -46,14 +46,7 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        for word in [menuFood]()
-        {
-            if word.name.uppercased().contains(searchText.uppercased())
-            {
-                menuFoodArray.append(word)
-            }
-        }
-        self.tableView.reloadData()
+        
     }
     
     func updateSearchResults(for searchController: UISearchController) {

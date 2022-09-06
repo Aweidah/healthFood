@@ -14,7 +14,7 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var LblPrice: UILabel!
     @IBOutlet weak var AddCard: UIButton!
     @IBOutlet weak var imgFood: UIImageView!
-    
+ 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -32,6 +32,10 @@ class TableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
+    }
+    
+    @IBAction func addToCartPressed(_ sender: Any) {
+        
     }
     
 }
