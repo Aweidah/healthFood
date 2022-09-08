@@ -90,11 +90,12 @@ class SettingsAccVC: UIViewController {
                 try!  Auth.auth().signOut()
                 let alert = Constants.createAlertController(title: "Success", message: "Your account will delete after 1 second")
                 self.present(alert, animated: true, completion: nil)
-                return
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.7) { [weak self] in
                     let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainVC")
+//                    mainVC.downloadJSON()
                     mainVC.modalPresentationStyle = .fullScreen
                     self?.present(mainVC, animated: true)
+                    return
                 }
             }
         }
@@ -142,7 +143,7 @@ class SettingsAccVC: UIViewController {
             if emailField.text != userEmail{
                 currentUser?.updateEmail(to: emailField.text!){ error in
                     if let error = error{
-                        print (error)
+                        print(error)
                     }
                 }
             }

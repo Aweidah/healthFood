@@ -1,0 +1,45 @@
+
+/* Class = "UILabel"; text = "Re-Password"; ObjectID = "1Jw-03-fEe"; */
+"1Jw-03-fEe.text" = "إعادة كلمة المرور";
+
+/* Class = "UITextField"; placeholder = "Comfirm password..."; ObjectID = "3xo-0q-Auw"; */
+"3xo-0q-Auw.placeholder" = "تأكيد كلمة المرور...";
+
+/* Class = "UITextField"; placeholder = "Enter your number..."; ObjectID = "DXm-Xg-z7i"; */
+"DXm-Xg-z7i.placeholder" = "أدخل رقمك...";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "E8F-Eb-bF9"; */
+"E8F-Eb-bF9.text" = "كلمة المرور";
+
+/* Class = "UITextField"; placeholder = "Enter your last name..."; ObjectID = "GeH-i3-Iqn"; */
+"GeH-i3-Iqn.placeholder" = "أدخل اسمك الأخير ...";
+
+/* Class = "UITextField"; placeholder = "Enter your first name..."; ObjectID = "WHx-c7-L68"; */
+"WHx-c7-L68.placeholder" = "أدخل اسمك الأول ...";
+
+/* Class = "UILabel"; text = "Phone Number"; ObjectID = "Wj4-Rt-dRb"; */
+"Wj4-Rt-dRb.text" = "رقم الهاتف";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "a42-hM-0cA"; */
+"a42-hM-0cA.text" = "البريد الإلكتروني";
+
+/* Class = "UILabel"; text = "LogOut"; ObjectID = "aSy-Vb-U8u"; */
+"aSy-Vb-U8u.text" = "تسجيل";
+
+/* Class = "UILabel"; text = "First Name"; ObjectID = "dr0-li-WRJ"; */
+"dr0-li-WRJ.text" = "الاسم الاول";
+
+/* Class = "UITextField"; placeholder = "Enter your Email..."; ObjectID = "era-td-Npz"; */
+"era-td-Npz.placeholder" = "أدخل بريدك الإلكتروني ...";
+
+/* Class = "UILabel"; text = "Last Name"; ObjectID = "h2y-3H-hcs"; */
+"h2y-3H-hcs.text" = "اسم العائلة";
+
+/* Class = "UITextField"; placeholder = "Enter your password..."; ObjectID = "lHg-Ic-mz0"; */
+"lHg-Ic-mz0.placeholder" = "ادخل رقمك السري...";
+
+/* Class = "UIButton"; configuration.title = "LogOn"; ObjectID = "rtV-7b-ciO"; */
+"rtV-7b-ciO.configuration.title" = "تسجيل";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "rtV-7b-ciO"; */
+"rtV-7b-ciO.normalTitle" = "Button";

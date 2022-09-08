@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseAuth
 import FirebaseFirestore
 import Sheeeeeeeeet
@@ -26,12 +27,25 @@ class SettingsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setData()
+        
         if (isArabic()) {
             self.lblSelectedLanguage.text = "العربية"
         } else {
             self.lblSelectedLanguage.text = "English"
         }
-        
+    }
+    
+    
+    func isArabic() -> Bool {
+        if (MOLHLanguage.currentAppleLanguage() == "ar"){
+            return true
+        }else{
+            return false
+        }
+    }
+    
+    func setData() {
         let db = Firestore.firestore()
         
         db.collection("users").whereField("email", isEqualTo: Auth.auth().currentUser?.email ?? "")
@@ -50,16 +64,11 @@ class SettingsVC: UIViewController {
             }
     }
     
-    func isArabic() -> Bool {
-        if (MOLHLanguage.currentAppleLanguage() == "ar"){
-            return true
-        }else{
-            return false
-        }
-    }
-    
     @IBAction func notificationsAction(_ sender: Any) {
         
+        let alert = Constants.createAlertController(title: "Comming Soon", message: "There's something wrong, this will be in future update.")
+        self.present(alert, animated: true, completion: nil)
+        return
     }
     
     @IBAction func CartPressed(_ sender: Any) {
@@ -135,9 +144,24 @@ class SettingsVC: UIViewController {
     }
     
     @IBAction func logOutPressed(_ sender: Any) {
-        try! FirebaseAuth.Auth.auth().signOut()
-        let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainVC")
-        mainVC.modalPresentationStyle = .fullScreen
-        self.present(mainVC, animated: true)
+        
+        let auth = Auth.auth()
+        do{
+            try auth.signOut()
+            let defaults = UserDefaults.standard
+            defaults.set(false, forKey: "isUserSignedIn")
+            let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainVC")
+            mainVC.modalPresentationStyle = .fullScreen
+            self.present(mainVC, animated: true)
+        }
+        catch let error{
+            let alert = Constants.createAlertController(title: "Error", message: error.localizedDescription)
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+//            try! FirebaseAuth.Auth.auth().signOut()
+//            let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainVC")
+//            mainVC.modalPresentationStyle = .fullScreen
+//            self.present(mainVC, animated: true)
     }
 }

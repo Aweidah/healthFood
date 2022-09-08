@@ -69,7 +69,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0wZ-iG-KWl" customClass="BorderedView" customModule="healthFoodHTU" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="25.5" width="334" height="31"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your Email..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mXD-oF-qGY" userLabel="Field Email">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Enter your Email..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mXD-oF-qGY" userLabel="Field Email">
                                                         <rect key="frame" x="17" y="0.0" width="300" height="31"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="31" id="NDd-d8-KZO"/>
@@ -111,7 +111,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6q1-sr-6Ca" customClass="BorderedView" customModule="healthFoodHTU" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="25.5" width="334" height="31"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ySE-q9-jDh">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Enter Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ySE-q9-jDh">
                                                         <rect key="frame" x="17" y="0.0" width="300" height="31"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="31" id="Sya-cQ-0h2"/>

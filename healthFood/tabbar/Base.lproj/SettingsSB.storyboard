@@ -46,8 +46,8 @@
                                 <imageReference key="image" image="person.crop.circle" catalog="system" symbolScale="medium"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="130" scale="default" weight="light"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lK4-k6-dvA" userLabel="fullName">
-                                <rect key="frame" x="85" y="263.5" width="244" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lK4-k6-dvA" userLabel="fullName">
+                                <rect key="frame" x="186.5" y="263.5" width="41.5" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="Zlm-iP-k2O"/>
                                 </constraints>
@@ -55,7 +55,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQT-y7-s9J" userLabel="location">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQT-y7-s9J" userLabel="location">
                                 <rect key="frame" x="186.5" y="306.5" width="41.5" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="Aq9-rn-P7F"/>
@@ -433,7 +433,6 @@
                         <viewLayoutGuide key="safeArea" id="4I2-Zw-FUq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4I2-Zw-FUq" firstAttribute="trailing" secondItem="lK4-k6-dvA" secondAttribute="trailing" constant="85" id="3H6-NM-NQh"/>
                             <constraint firstItem="4I2-Zw-FUq" firstAttribute="trailing" secondItem="VEq-dp-bi4" secondAttribute="trailing" id="Bwc-YX-pi5"/>
                             <constraint firstItem="FQT-y7-s9J" firstAttribute="top" secondItem="lK4-k6-dvA" secondAttribute="bottom" constant="12" id="Hzu-n1-k8n"/>
                             <constraint firstItem="L1m-YL-3J0" firstAttribute="top" secondItem="FQT-y7-s9J" secondAttribute="bottom" constant="8" id="I1q-Iw-xPF"/>
@@ -441,7 +440,6 @@
                             <constraint firstItem="FQT-y7-s9J" firstAttribute="centerX" secondItem="lK4-k6-dvA" secondAttribute="centerX" id="X9L-UM-Tcl"/>
                             <constraint firstItem="4I2-Zw-FUq" firstAttribute="trailing" secondItem="L1m-YL-3J0" secondAttribute="trailing" constant="20" id="dx9-y3-jdw"/>
                             <constraint firstItem="lK4-k6-dvA" firstAttribute="top" secondItem="iam-Uy-pG8" secondAttribute="bottom" constant="15" id="eB2-0m-Vhb"/>
-                            <constraint firstItem="lK4-k6-dvA" firstAttribute="leading" secondItem="4I2-Zw-FUq" secondAttribute="leading" constant="85" id="ibg-19-wry"/>
                             <constraint firstItem="L1m-YL-3J0" firstAttribute="leading" secondItem="4I2-Zw-FUq" secondAttribute="leading" constant="20" id="jJf-yW-dDH"/>
                             <constraint firstItem="lK4-k6-dvA" firstAttribute="centerX" secondItem="cfn-U8-E5e" secondAttribute="centerX" id="mxQ-qo-67o"/>
                             <constraint firstItem="4I2-Zw-FUq" firstAttribute="bottom" secondItem="L1m-YL-3J0" secondAttribute="bottom" id="nLI-39-Xtv"/>
@@ -520,6 +518,15 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="AddItem:" destination="Dux-ho-vtj" eventType="touchUpInside" id="EAe-Cz-UkH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="yZP-0I-hNL">
+                                <rect key="frame" x="0.0" y="172" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="Cart:" destination="Dux-ho-vtj" eventType="touchUpInside" id="Our-01-sRJ"/>
                                 </connections>
                             </button>
                         </subviews>

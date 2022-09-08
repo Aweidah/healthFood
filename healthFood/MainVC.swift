@@ -20,6 +20,17 @@ class MainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let defaults = UserDefaults.standard
+        if defaults.bool(forKey: "isUserSignedIn"){
+            let storyboard = UIStoryboard(name: "TabBarSB", bundle: nil)
+            
+            let TabBarVC = storyboard.instantiateViewController(identifier: Constants.Storyboard.TabBarVC) as? TabBarVC
+            
+            self.view.window?.rootViewController = TabBarVC
+            self.view.window?.makeKeyAndVisible()
+        }
+        
+        
         // Firebase remote config
         setupRemoteConfigDefaults()
         displayNewValues()

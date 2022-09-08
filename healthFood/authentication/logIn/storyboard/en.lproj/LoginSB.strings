@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "4qU-bp-IJX"; */
+"4qU-bp-IJX.text" = "Password";
+
+/* Class = "UILabel"; text = "LogIn"; ObjectID = "CjU-xF-3FK"; */
+"CjU-xF-3FK.text" = "LogIn";
+
+/* Class = "UIButton"; normalTitle = "Forgot Password?"; ObjectID = "Ync-Ym-HTb"; */
+"Ync-Ym-HTb.normalTitle" = "Forgot Password?";
+
+/* Class = "UIButton"; configuration.title = "LogIn"; ObjectID = "auZ-cn-uDS"; */
+"auZ-cn-uDS.configuration.title" = "LogIn";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "auZ-cn-uDS"; */
+"auZ-cn-uDS.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Enter your Email..."; ObjectID = "mXD-oF-qGY"; */
+"mXD-oF-qGY.placeholder" = "Enter your Email...";
+
+/* Class = "UITextField"; placeholder = "Enter Password..."; ObjectID = "ySE-q9-jDh"; */
+"ySE-q9-jDh.placeholder" = "Enter Password...";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "yme-Ax-UwU"; */
+"yme-Ax-UwU.text" = "Email";

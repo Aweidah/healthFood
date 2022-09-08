@@ -7,7 +7,8 @@
 
 import UIKit
 import FirebaseAuth
-import Firebase
+import FirebaseFirestore
+import SVProgressHUD
 
 class LogOnVC: UIViewController {
     
@@ -81,9 +82,11 @@ class LogOnVC: UIViewController {
         let phone = phoneField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
+        showLoading()
         // Create the user
         Auth.auth().createUser(withEmail: email, password: password){ (result, err) in
-            
+        
+            self.hideLoading()
             // Check for errors
             if err != nil{
                 
@@ -121,5 +124,15 @@ class LogOnVC: UIViewController {
         
         self.view.window?.rootViewController = TabBarVC
         self.view.window?.makeKeyAndVisible()
+    }
+    
+    func showLoading() {
+        SVProgressHUD.setBackgroundColor(#colorLiteral(red: 0.3635145724, green: 0.2341234982, blue: 0.4046436846, alpha: 1))
+        SVProgressHUD.setForegroundColor(UIColor.white)
+        SVProgressHUD.show()
+    }
+    
+    func hideLoading() {
+        SVProgressHUD.dismiss()
     }
 }

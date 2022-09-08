@@ -8,6 +8,17 @@
 import Foundation
 import UIKit
 
+//class Service {
+//    static func createAlertController(title: String, message: String) -> UIAlertController {
+//        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+//
+//        let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in
+//            alert.dismiss(animated: true, completion: nil)
+//        }
+//        alert.addAction(okAction)
+//        return alert
+//    }
+//}
 struct Constants {
     
     struct Storyboard {
@@ -25,6 +36,8 @@ struct Constants {
         static let SettingsChangeNumVC = "SettingsChangeNumVC"
         
     }
+    //"wrong__info_message".localized
+    //error!.localizedDescription
     static func createAlertController(title: String, message: String) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
@@ -38,15 +51,11 @@ struct Constants {
     }
     
 }
+
 //if error != nil{
 //    let alert = Constants.createAlertController(title: "Error", message: "Oops, something went worng, Please try again later.")
 //            self.present(alert, animated: true, completion: nil)
 //            return
-
-//let alert = Constants.createAlertController(title: "Comming Soon", message: "There's something wrong, or there is no time to do this feature right now, this will be a future update soon.")
-//        self.present(alert, animated: true, completion: nil)
-//        return
-
 
 //        let storyboard = UIStoryboard(name: "TabBarSB", bundle: nil)
 //        let TabBarVC = storyboard.instantiateViewController(identifier: Constants.Storyboard.TabBarVC) as? TabBarVC

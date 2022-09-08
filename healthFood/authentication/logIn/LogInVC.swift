@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
-import SwiftUI
+import SVProgressHUD
 
 class LogInVC: UIViewController {
     
@@ -32,17 +32,9 @@ class LogInVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-#if DEBUG
+        #if DEBUG
         setUpTestingData()
-#endif
-        
-        //        title = "login"
-        //        titleColor = UIColor.red
-        
-        //        let attributedString = NSAttributedString(string: "Forget your Password?", attributes: [NSForegroundColorAttributeName: UIColor.white , NSUnderlineStyleAttributedName:1])
-        //        PasswordBtn.setAttributedTitle(attributedString, for: .normal)
-        
-        // Do any additional setup after loading the view.
+        #endif
     }
     
     private func setUpTestingData() {
@@ -64,6 +56,7 @@ class LogInVC: UIViewController {
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true)
     }
+    
     @IBAction func passwordSecurePressed(_ sender: Any) {
         if (isPasswordVisible) {
             isPasswordVisible = false
@@ -76,6 +69,7 @@ class LogInVC: UIViewController {
             self.PasswordBtn.setImage(UIImage(named: "ic_hidepassword"), for: .normal)
         }
     }
+    
     @IBAction func forgotPasswordPressed(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "ForgotPasswordSB", bundle: nil)
@@ -94,7 +88,11 @@ class LogInVC: UIViewController {
         let email = fieldEmail.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = fieldPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
+        showLoading()
+        
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            
+            self.hideLoading()
             
             if error != nil{
                 let alert = Constants.createAlertController(title: "Error", message: "wrong_login_info_message".localized)
@@ -111,5 +109,15 @@ class LogInVC: UIViewController {
                 self.view.window?.makeKeyAndVisible()
             }
         }
+    }
+    
+    func showLoading() {
+        SVProgressHUD.setBackgroundColor(#colorLiteral(red: 0.3635145724, green: 0.2341234982, blue: 0.4046436846, alpha: 1))
+        SVProgressHUD.setForegroundColor(UIColor.white)
+        SVProgressHUD.show()
+    }
+    
+    func hideLoading() {
+        SVProgressHUD.dismiss()
     }
 }

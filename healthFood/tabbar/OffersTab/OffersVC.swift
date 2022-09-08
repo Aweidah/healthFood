@@ -62,6 +62,24 @@ class OffersVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         return 100
     }//done
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "SettingsSB", bundle: nil)
+        let cartVC = sb.instantiateViewController(identifier: Constants.Storyboard.CartVC) as? CartVC
+        
+        if searching || scopeButtonPressed {
+            cartVC?.photo = UIImage(named: "\(menuFoodArray[indexPath.row].photo)")!
+            cartVC?.name = (menuFoodArray[indexPath.row].name)
+            cartVC?.price = ("\(menuFoodArray[indexPath.row].price) Jd")
+            self.present((cartVC)!, animated: true, completion: nil)
+        }
+        else {
+            cartVC?.photo = UIImage(named: "\(FoodArray[indexPath.row].photo)")!
+            cartVC?.name = (FoodArray[indexPath.row].name)
+            cartVC?.price = ("\(FoodArray[indexPath.row].price) JD")
+            self.present((cartVC)!, animated: true, completion: nil)
+        }
+    }
+    
     func updateSearchResults(for searchController: UISearchController) {
         
         let scopeButton = searchController.searchBar.scopeButtonTitles![searchController.searchBar.selectedScopeButtonIndex]
@@ -120,43 +138,7 @@ class OffersVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         //        }
         //        tableView.reloadData()
     }
-    //    var menuFoodArray = [menuFood]() //searchedperfume
-    //    var FoodArray = [menuFood]() //perfumeList
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let sb = UIStoryboard(name: "SettingsSB", bundle: nil)
-        let cartVC = sb.instantiateViewController(identifier: Constants.Storyboard.CartVC) as? CartVC
-        
-                if searching || scopeButtonPressed {
-                    cartVC?.photo = UIImage(named: "\(menuFoodArray[indexPath.row].photo)")!
-                    cartVC?.name = (menuFoodArray[indexPath.row].name)
-                    cartVC?.price = ("\(menuFoodArray[indexPath.row].price) Jd")
-                    self.present((cartVC)!, animated: true, completion: nil)
-                }
-                else {
-                    cartVC?.photo = UIImage(named: "\(FoodArray[indexPath.row].photo)")!
-                    cartVC?.name = (FoodArray[indexPath.row].name)
-                    cartVC?.price = ("\(FoodArray[indexPath.row].price) JD")
-                    self.present((cartVC)!, animated: true, completion: nil)
-                }
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        //        menuFoodArray = []
-        //
-        //        var menuFoodArray = [menuFood]()
-        //
-        //        for word in [menuFood]()
-        //        {
-        //            if word.name.uppercased().contains(searchText.uppercased())
-        //            {
-        //                menuFoodArray.append(word)
-        //            }
-        //        }
-        //
-        //        self.tableView.reloadData()
-    }
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -170,15 +152,6 @@ class OffersVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         
         self.navigationItem.title = "Offers"
         navigationItem.searchController = searchBar
-        
-        //        let docRef = database.document("")
-        //        docRef.getDocument { snapshot, error in
-        //            guard let data = snapshot?.data(), error == nil else {
-        //                return
-        //        }
-        //            print(data)
-        //        }
-        //        filterdData = menuFoodArray
         
         
         let offer1 = (menuFood.init(photo: UIImage(named: "menu.jpg")!, name: "First Deal", type: "Deals", price: 180))
@@ -202,35 +175,6 @@ class OffersVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         let price: Double
     }
     
-    //    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    //        filterdData = []
-    //
-    //        if searchText == "" {
-    //            filterdData = menuFoodArray
-    //        }
-    //        else
-    //        {
-    //            for food in menuFoodArray{
-    //                if food.name.lowercased().contains(searchText.lowercased()){
-    //                    filterdData.append(food)
-    //                }
-    //            }
-    //        }
-    //        self.tableView.reloadData()
-    //    }
-    
-    //    extension baggageFood : UITextFieldDelegate {
-    //        func textFieldDidBeginEditing (searchController : searchController)
-    //        if(searchController() == self.searchController){
-    //            self.searchController.layer.borderColor = uicolor.orange.cgColor
-    //        }
-    //    }
-    //
-    //    func textFieldDidEndEditing (searchController : searchController) {
-    //        if(searchController() == self.searchController){
-    //            self.searchController.layer.borderColor = UIColor(named: "subtitleColor")?.cgColor
-    //        }
-    //    }
     private func configureSearchController() {
         searchBar.loadViewIfNeeded()
         searchBar.searchResultsUpdater = self
@@ -245,4 +189,34 @@ class OffersVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         //        searchBar.searchBar.placeholder = "Search Offers By Name"
     }
 }
+
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        filterdData = []
+//
+//        if searchText == "" {
+//            filterdData = menuFoodArray
+//        }
+//        else
+//        {
+//            for food in menuFoodArray{
+//                if food.name.lowercased().contains(searchText.lowercased()){
+//                    filterdData.append(food)
+//                }
+//            }
+//        }
+//        self.tableView.reloadData()
+//    }
+
+//    extension baggageFood : UITextFieldDelegate {
+//        func textFieldDidBeginEditing (searchController : searchController)
+//        if(searchController() == self.searchController){
+//            self.searchController.layer.borderColor = uicolor.orange.cgColor
+//        }
+//    }
+//
+//    func textFieldDidEndEditing (searchController : searchController) {
+//        if(searchController() == self.searchController){
+//            self.searchController.layer.borderColor = UIColor(named: "subtitleColor")?.cgColor
+//        }
+//    }
 

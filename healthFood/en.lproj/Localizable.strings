@@ -6,4 +6,4 @@
   
 */
 
-"wrong_login_info_message" = "There was an error in email field or password field, check your email spilling, or this email doesn't exist.";
+"wrong_login_info_message" = "There is no user record corresponding to this identifier. The password is invalid or The user may have been deleted.";

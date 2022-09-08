@@ -160,7 +160,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comfirm password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3xo-0q-Auw" userLabel="rePasswordField">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3xo-0q-Auw" userLabel="rePasswordField">
                                                 <rect key="frame" x="0.0" y="25.5" width="334" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="31" id="rDS-Qh-bN8"/>

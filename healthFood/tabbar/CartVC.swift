@@ -6,9 +6,14 @@
 //
 
 import UIKit
+import StoreKit
 
-class CartVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class CartVC: UIViewController, UITableViewDelegate, UITableViewDataSource, SKProductsRequestDelegate, SKPaymentTransactionObserver{
     
+    enum Product: String , CaseIterable
+    {
+        case gems = "com.healthFoodHTU"
+    }
     
     var myArray = [String]()
     
@@ -70,6 +75,44 @@ class CartVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         return UISwipeActionsConfiguration(actions: [add])
     }
     
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        if let oProduct = response.products.first{
+            print("Product is available!")
+            self.purchase(aproduct: oProduct)
+        }
+        else{
+            print("Product is not available!")
+        }
+    }
+    
+    func purchase(aproduct: SKProduct){
+        let payment = SKPayment(product: aproduct)
+        SKPaymentQueue.default().add(self)
+        SKPaymentQueue.default().add(payment)
+        
+    }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        for transaction in transactions {
+            switch transaction.transactionState{
+            case .purchasing:
+                print("Coustomeer in the process!")
+            case .purchased:
+                SKPaymentQueue.default().finishTransaction(transaction)
+                print("Product purchased!")
+            case .failed:
+                print("Fail!")
+            case .restored:
+                print("Restore!")
+            case .deferred:
+                print("Deferred!")
+            default: break
+                SKPaymentQueue.default().finishTransaction(transaction)
+            }
+            
+        }
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var AddTextField: UITextField!
     @IBOutlet weak var ImgFood: UIImageView!
@@ -111,5 +154,16 @@ class CartVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     }
     
     @IBAction func Cart(_ sender: Any) {
+        
+        if SKPaymentQueue.canMakePayments(){
+            let set: Set<String> = [Product.gems.rawValue]
+            let productRequest = SKProductsRequest(productIdentifiers: set)
+            productRequest.delegate = self
+            productRequest.start()
+            
+        }
+        
+        
+        
     }
 }
